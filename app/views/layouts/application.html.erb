@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NbaDigitalAlbum</title>
+    <title>NBA Digital Album</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,16 +12,23 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100">
+
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="container-fluid">
         <%= link_to root_path, class: "navbar-brand" do %>
           <%= image_tag "logo.png" %>
         <% end %>
          <%= link_to root_path, class: "navbar-brand" do %>
-        <h1 class="title">Air Artwork</h1>
+        <h1 class="title">Nba Digital Album</h1>
           <% end %>
+      </div>
+      <li class="nav-item dropdown">
+            <%= image_tag "", class: "avatar dropdown-toggle"%>
+      </div>
+          </li>
+    </div>
 
-    <%= render "shared/navbar" %>
+    <%# <%= render "shared/navbar" %> 
     <%= render "shared/flashes" %>
 
     <%= yield %>
