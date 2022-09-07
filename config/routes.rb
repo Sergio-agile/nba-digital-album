@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  get 'albums/cards'
-  get 'albums/quizzes'
   devise_for :users
-  #root to: "pages#home"
+  # Defines the root path route ("/")
   root to: "pages#landing"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "albums", to: "albums#index"
+  #get 'albums/cards'
+  #get 'albums/quizzes'
 end
