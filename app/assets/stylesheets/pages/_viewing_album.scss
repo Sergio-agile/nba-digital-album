@@ -6,93 +6,107 @@
     padding: 0 24px;
 }
 
-.viewing-album-text {
-    display: flex;
-    color: white;
-    align-items: center;
-    justify-content: space-between;
-    h2 {
-        // justify-content: center;
-        font-size: 48px;
-    }
-    h3 {
-        // justify-content: flex-end;
-        font-size: 22px;
-    }
+
+.viewing-album-season{
+  color: white;
+  margin: 16px 16px 0
+  h3{
+    font-size: 22px;
+  }
 }
 
-.album-cards-container {
-    display: flex;
-    justify-content: center;
+.viewing-album-team{
+  color: white;
+  margin-top: -25px;
+  h2 {
+    font-size: 70px;
+  }
+}
+
+
+.album-cards-container{
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
 }
 
 .album-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 24px;
-    // height: 200px;
-    padding: 24px 0;
-    justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px 100px;
+  padding: 24px 0;
+  justify-content: space-evenly;
 }
 
 .card-image-hidden {
-    height: 200px;
-    background-position: center;
-    background-size: cover;
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
-    border: 2px solid $red;
-    border-radius: 5px 5px 0 0;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
+  border: 2px solid $red;
+  border-radius: 5px 5px 0 0;
 }
 
 .card-image-shown {
-    height: 200px;
-    background-position: center;
-    background-size: cover;
-    background-image: url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
-    border: 2px solid $red;
-    border-radius: 5px 5px 0 0;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
+  border: 2px solid $red;
+  border-radius: 5px 5px 0 0;
 }
 
-.card {
-    position: relative;
-    height: 310px;
-    width: 280px;
-    border: none !important;
+.card{
+  position: relative;
+  height: 310px;
+  // height: 340px;
+  width: 280px;
+  border: none !important;
 }
 
 .card-basic-info {
-    text-align: center;
-    text-justify: center;
-    h2 {
-        font-size: 28px;
-    }
-    p {
-        font-size: 22px;
-        color: $red;
-    }
-    .card-count {
-        position: absolute;
-        right: -10px;
-        top: -20px;
-        border-radius: 20px;
-        width: 40px;
-        height: 40px;
-        background-color: $red;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  text-align: center;
+  text-justify: center;
+  margin: 8px 0 -8px 0;
+  h2 {
+    font-size: 28px;
+  }
+  p{
+    font-size: 22px;
+    color: $red;
+  }
+  .card-count {
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: $red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .viewing-album-button {
+  color: white;
+  padding: 8px 32px;
+  margin-bottom: 32px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  a {
+    background-color: $red;
+    padding: 10px 18vw;
+    text-decoration: none;
     color: white;
-    padding: 8px 24px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    a {
-        background-color: $red;
-        padding: 10px 30px;
-    }
+    transition: background-color ease 0.5s;
+  }
+  a:hover{
+    color: white;
+    background-color: $gold;
+  }
 }
+
