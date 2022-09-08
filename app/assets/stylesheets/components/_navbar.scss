@@ -12,6 +12,41 @@
     justify-content: space-between;
     align-items: center;
     height: 150px;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+#nav-left-img {
+    height: auto; // takes the same size of the div element (parent element)
+    img {
+        height: 150px; // resize of the img to fit in the div
+    }
+}
+
+// this is to make the avatar an rounded image
+.image--cover {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+#login-button {
+    text-align: center;
+    background-color: white;
+    border: none;
+    // color: black;
+    color: rgb(29, 66, 138);
+    text-decoration: none;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 10px 0px 0px rgb(200, 16, 46), -10px 0px 0px rgb(29, 66, 138);
+    // box-shadow: -10px 0px 0px rgb(29, 66, 138);
+    font-size: large;
+}
+
+#login-button:hover {
+    color: rgb(200, 16, 46);
 }
