@@ -1,28 +1,34 @@
-<%= link_to "/home", class: "linking" do %>
+<%# <%= link_to "/home", class: "linking" do %>
   <%# <div class="banner"> %>
-    <div class="container">
-      <h1>NBA Digital Album</h1>
-      <p></p>
+    <%# <div class="container"> %>
+      <%# <h1>NBA Digital Album</h1> %>
+      <%# <p></p> %>
 
-      <div class="slider">
+     <div class="slider">
         <figure>
            <div>
+              <p class="slidetext">Slide 1</p>
             <%= image_tag "landing1.jpeg", :class => "slide1" %>
            </div>
            <div>
-            <%= image_tag "landing2.jpeg", :class => "slide2" %>
-            </div>
-            <div>
-            <%= image_tag "landing3.jpeg", :class => "slide3" %>
+              <p class="slidetext">Slide 2</p>
+           <%= image_tag "landing2.jpeg", :class => "slide2" %>
            </div>
            <div>
-            <%= image_tag "landing4.jpeg", :class => "slide4" %>
+              <p class="slidetext">Slide 3</p>
+           <%= image_tag "landing3.jpeg", :class => "slide3" %>
            </div>
            <div>
-            <%= image_tag "landing5.jpeg", :class => "slide5" %>
+              <p class="slidetext">Slide 4</p>
+           <%= image_tag "landing4.jpeg", :class => "slide4" %>
            </div>
-          </figure>
+           <div>
+             <p class="slidetext">Slide 5</p>
+           <%= image_tag "landing5.jpeg", :class => "slide5" %>
+           </div>
+        </figure>
       </div>
+</div>
     </div>
   <%# </div> %>
-<% end %>
+<%# <% end %>

@@ -9,7 +9,7 @@
   z-index: 1; /*places slide text, i.e.<p> element, on top of everything else*/
   font-size: 50px;
   text-align: left;
-  position: absolute; /*places text on top of image instead of next to it (relative)*/
+  position: absolute;/*places text on top of image instead of next to it (relative)*/
   width: 40%;
   color: white;
 }
@@ -17,13 +17,13 @@
 .slider {
   overflow: hidden; /*prevents text overflowing boundaries*/
   height: auto;
-  width: 80%;
-  border: 5px solid black;
+  width: 100%;
   margin: auto; /*centres slide show*/
-  margin-top: 20px;
-  outline: 2px solid red;
-  box-sizing: border-box;
-  align-items: center;
+
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+
 }
 
 .slider figure div {
@@ -32,8 +32,15 @@
 }
 
 .slider figure img {
-  width: 100%; /* i.e. 100% of it's parent div (above) which is 20% of the containing div 'slider'*/
+ /* i.e. 100% of it's parent div (above) which is 20% of the containing div 'slider'*/
   float: left; /*need to do this for imgs & divs within figure*/
+  width: 1000px;
+  height: 945px;
+  left: 100px;
+  top: 138px;
+  background-color: transparent;
+  mix-blend-mode: normal;
+  opacity: 0.65;
 }
 
 .slider figure {
@@ -97,9 +104,4 @@
   96% {
      left: 0%;
   }
-}
-
-
-.linking {
-  background-color: black;
 }
