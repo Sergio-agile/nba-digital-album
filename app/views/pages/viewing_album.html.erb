@@ -1,0 +1,39 @@
+<div id="viewing-album-background">
+
+  <div class="text-end text-white">
+    <h3><%= Album.first.season %></h3>
+  </div>
+  <div class="text-center text-white">
+    <h2><%= Card.first.team%></h2>
+  </div>
+  <div class="album-cards-container">
+    <div class="album-cards">
+      <% Card.first(6).each do |player| %>
+        <div class="card">
+          <% if player.counter == 0 %>
+            <%# <img src="https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546" /> %>
+            <div class="card-image-hidden">
+            </div>
+          <% else %>
+            <div class="card-image-shown">
+            </div>
+          <% end %>
+          <div class="card-basic-info">
+            <div>
+              <h2><%= player.name %></h2>
+              <p><%= player.position %></p>
+            </div>
+            <% if player.counter > 1 %>
+            <%# <% if player.counter == 0 %>
+              <h3 class="card-count"><%= player.counter %></h3>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="viewing-album-button">
+    <%= link_to "Add Stickers", "#" %>
+  </div>
+</div>
