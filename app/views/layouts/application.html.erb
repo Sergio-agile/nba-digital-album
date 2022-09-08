@@ -17,13 +17,17 @@
     <div id='wrapper'>
       <div class='nav-container'>
         <div>
-          <p>Hello</p>
+          <%= image_tag "basketball_player_silhouette_white.png" %>
+          <%# <p style="color: white">Hello</p> %>
         </div>
         <div>
-          <p>Hello</p>
+          <h1><span style="font-weight: bold; color: rgb(29, 66, 138)">NBA</span> <span style="color: rgb(200, 16, 46)">Digital Album</span></h1>
         </div>
         <div>
-          <p>Hello</p>
+          <%= link_to root_path, class: "navbar-brand" do %>
+            <%= image_tag "basketball_player_silhouette_white.png" %>
+          <% end %>
+          <%# <p style="color: white">Hello</p> %>
         </div>
       </div>
     </div>
