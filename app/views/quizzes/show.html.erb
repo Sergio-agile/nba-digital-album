@@ -1,0 +1,22 @@
+<div class="quiz-container">
+  <div class="quiz-title-container">
+    <h1><%= @quiz.question %></h1>
+    <a href="#"><button><p><%= @quiz.true_answer %></p></button></a>
+    <a href="#"><button><p><%= @quiz.false_answer_one %></p></button></a>
+    <a href="#"><button><p><%= @quiz.false_answer_two %></p></button></a>
+    <button><a><p><%= @quiz.false_answer_two %></p></a></button>
+
+
+    <%= simple_form_for @quiz do |f| %>
+      <div class="mb-3">
+        <%= f.hidden_field :status, value: @quiz.true_answer %>
+        <%= f.collection_radio_buttons :answer, [@quiz.true_answer, @quiz.false_answer_one, @quiz.false_answer_two],
+                                        :answer, :answer %>
+        <%= f.submit "Accept", class: "btn btn-outline-success" %>
+      </div>
+    <% end %>
+
+  </div>
+
+
+<div>

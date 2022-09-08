@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "albums", to: "albums#index"
   #get 'albums/cards'
   #get 'albums/quizzes'
+  resources :quizzes, only: [:show]
 end
