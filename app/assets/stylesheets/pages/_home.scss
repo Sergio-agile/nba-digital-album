@@ -1,3 +1,16 @@
+.slide-container{
+  width: 100%;
+  margin: 0;
+}
+
+
+
+.slide1 {
+  width: 100vw !important;
+  object-fit: cover;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +25,7 @@
   position: absolute;/*places text on top of image instead of next to it (relative)*/
   width: 40%;
   color: white;
+  margin: 0;
 }
 
 .slider {

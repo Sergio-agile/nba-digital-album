@@ -6,25 +6,25 @@
 
      <div class="slider">
         <figure>
-           <div>
+           <div class="slide-container">
               <p class="slidetext">Slide 1</p>
-            <%= image_tag "landing1.jpeg", :class => "slide1" %>
+              <%=  image_tag image_url("landing1.jpg"), :class => "slide1"%>
            </div>
-           <div>
+           <div class="slide-container">
               <p class="slidetext">Slide 2</p>
-           <%= image_tag "landing2.jpeg", :class => "slide2" %>
+              <%= image_tag image_url("landing2.jpg"), :class => "slide1" %>
            </div>
-           <div>
+           <div class="slide-container">
               <p class="slidetext">Slide 3</p>
-           <%= image_tag "landing3.jpeg", :class => "slide3" %>
+              <%= image_tag "landing3.jpg", :class => "slide1" %>
            </div>
-           <div>
-              <p class="slidetext">Slide 4</p>
-           <%= image_tag "landing4.jpeg", :class => "slide4" %>
-           </div>
-           <div>
-             <p class="slidetext">Slide 5</p>
-           <%= image_tag "landing5.jpeg", :class => "slide5" %>
+            <div class="slide-container">
+               <p class="slidetext">Slide 4</p>
+              <%= image_tag "landing4.jpg", :class => "slide1" %>
+            </div>
+           <div class="slide-container">
+            <p class="slidetext">Slide 5</p>
+            <%= image_tag "landing5.jpg", :class => "slide1" %>
            </div>
         </figure>
       </div>
