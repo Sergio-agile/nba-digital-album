@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "albums", to: "albums#index"
   #get 'albums/cards'
   #get 'albums/quizzes'
+  get "viewing-album", to: "pages#viewing_album"
 end
