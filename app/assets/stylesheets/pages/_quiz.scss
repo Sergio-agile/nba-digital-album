@@ -6,13 +6,19 @@
 }
 
 .quiz-container {
-  margin: 60px auto;
+  margin: auto;
   width: 70%;
   height: auto;
   padding: 10px;
   display: flex;
   flex-direction: column;
+  padding-top: 60px;
   // color: black;
+}
+
+#quiz-result-message {
+  font-size: 26px;
+  color: lightgray;
 }
 
 .quiz-buttons-container {
@@ -23,9 +29,29 @@
   margin-left: 50px;
   margin-top: 30px;
   align-items: center;
+  background-color: #ba9752;
 
-  .large{
-    background-color: rgb(186,151,82);
-    text-align: justify;
+  .quiz-button-lg{
+
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
   }
+}
+
+#quiz-try-again {
+  text-decoration: none;
+  display: block;
+  width: 50%;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: lightgrey;
+  margin-top: 70px;
+  margin-left: 170px;
 }

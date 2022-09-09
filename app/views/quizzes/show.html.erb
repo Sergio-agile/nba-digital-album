@@ -6,15 +6,23 @@
         <h1><%= @quiz.question %></h1>
       </div>
       <div>
+        <div id="quiz-result-message">
+        </div>
         <% @quiz.quiz_answers.each do |answer| %>
           <div class="quiz-buttons-container"
               data-controller="quiz"
               data-action="click->quiz#checkResult"
               data-quiz-target="button"
               data-quiz-correct-value="<%= answer.correct ? 'correct' : 'wrong'%>">
-            <a href="#"><button class="btn btn-lg large"><p><%= answer.text %></p></button></a>
+            <a class="quiz-button-lg" href="#"><%= answer.text %></a>
           </div>
         <% end %>
+        <div>
+          <%= link_to 'Try again', quiz_path(3), id: "quiz-try-again" %>
+        </div>
+
+
       </div>
+
   </div>
 </div>

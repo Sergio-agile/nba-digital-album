@@ -6,10 +6,12 @@ Rails.application.routes.draw do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get "albums", to: "albums#index"
-  get "viewing_albums", to: "pages#viewing_albums"
+
   #get 'albums/cards'
   #get 'albums/quizzes'
   resources :quizzes, only: [:show]
+
   get "viewing-album", to: "pages#viewing_album"
   get "pack", to: "pages#pack"
+
 end
