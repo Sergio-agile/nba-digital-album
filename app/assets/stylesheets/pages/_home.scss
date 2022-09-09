@@ -1,6 +1,97 @@
-.slide-container{
+.slide-container {
   width: 100%;
   margin: 0;
+}
+
+.text h2 {
+  color: #FFFFFF;
+  position: relative;
+  bottom: 500px;
+  font-family: 'Inter';
+  font-style: normal;
+}
+
+.text h1 {
+
+color: #FFFFFF;
+position: relative;
+bottom: 700px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+}
+
+.btn-12 {
+color: #FFFFFF;
+position: absolute;
+top: 1150px;
+left: 600px;
+border: none;
+box-shadow: none;
+width: 100px;
+height: 1px;
+line-height: 42px;
+-webkit-perspective: 230px;
+perspective: 230px;
+
+ }
+
+ .btn-12 span {
+  background: rgb(0,172,238);
+background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  display: block;
+  position: absolute;
+  width: 300px;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  margin:0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.btn-12 span:nth-child(1) {
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.btn-12 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.btn-12:hover span:nth-child(1) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.btn-12:hover span:nth-child(2) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+ color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
 }
 
 
@@ -8,6 +99,8 @@
 .slide1 {
   width: 100vw !important;
   object-fit: cover;
+
+
 }
 
 
@@ -22,27 +115,33 @@
   z-index: 1; /*places slide text, i.e.<p> element, on top of everything else*/
   font-size: 50px;
   text-align: left;
-  position: absolute;/*places text on top of image instead of next to it (relative)*/
+  //position: absolute;/*places text on top of image instead of next to it (relative)*/
   width: 40%;
   color: white;
   margin: 0;
+  position: relative;
+  top: 655px;
+  left: 533px;
+
+
 }
 
 .slider {
   overflow: hidden; /*prevents text overflowing boundaries*/
   height: auto;
-  width: 100%;
   margin: auto; /*centres slide show*/
-
   background-color: black;
-  width: 100vw;
-  height: 100vh;
+
+
+
+
 
 }
 
 .slider figure div {
   width: 20%;
   float: left; /*puts images in a line*/
+  position: relative;
 }
 
 .slider figure img {
@@ -54,7 +153,8 @@
   top: 138px;
   background-color: transparent;
   mix-blend-mode: normal;
-  opacity: 0.65;
+  opacity: 0.45;
+
 }
 
 .slider figure {
