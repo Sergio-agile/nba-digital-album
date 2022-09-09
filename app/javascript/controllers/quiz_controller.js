@@ -21,6 +21,7 @@ export default class extends Controller {
       button.style.backgroundColor = "green";
       const quizResultMessage = document.getElementById("quiz-result-message");
       quizResultMessage.innerText = "Congratulations! You're anwer is correct! You got a new pack of 5 cards! We're adding this cards to your album next week :)";
+      const quizOpenPack = document.getElementById("quiz-open-pack").style.display = "block";
     }else{
       button.style.backgroundColor = "red";
       const quizResultMessage = document.getElementById("quiz-result-message");

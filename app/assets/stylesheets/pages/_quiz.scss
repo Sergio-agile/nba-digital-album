@@ -16,6 +16,20 @@
   // color: black;
 }
 
+#quiz-open-pack {
+  text-decoration: none;
+  display: block;
+  width: 50%;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: $blue;
+  margin-top: 70px;
+  margin-left: 170px;
+  display: none;
+}
+
 #quiz-result-message {
   font-size: 26px;
   color: lightgray;
@@ -29,7 +43,7 @@
   margin-left: 50px;
   margin-top: 30px;
   align-items: center;
-  background-color: #ba9752;
+  background-color: $gold;
 
   .quiz-button-lg{
 
@@ -54,4 +68,5 @@
   background-color: lightgrey;
   margin-top: 70px;
   margin-left: 170px;
+  display: none;
 }
