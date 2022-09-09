@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get "viewing_albums", to: "pages#viewing_albums"
   #get 'albums/cards'
   #get 'albums/quizzes'
+  resources :quizzes, only: [:show]
+  get "viewing-album", to: "pages#viewing_album"
 end

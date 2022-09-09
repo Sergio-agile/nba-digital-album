@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_06_131258) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_08_103627) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +41,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_131258) do
     t.index ["album_id"], name: "index_cards_on_album_id"
   end
 
+  create_table "quiz_answers", force: :cascade do |t|
+    t.string "text"
+    t.boolean "correct"
+    t.bigint "quiz_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_quiz_answers_on_quiz_id"
+  end
+
   create_table "quizzes", force: :cascade do |t|
     t.string "question"
     t.string "true_answer"
@@ -67,4 +76,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_131258) do
 
   add_foreign_key "albums", "users"
   add_foreign_key "cards", "albums"
+  add_foreign_key "quiz_answers", "quizzes"
 end

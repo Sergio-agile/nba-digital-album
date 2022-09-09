@@ -1,0 +1,39 @@
+<div id="albums-background">
+  <%# <%=  image_tag image_url("basketball_gym_bw.jpeg") %>
+
+  <div class="text-center text-white albums-header">
+    <h2>My Albums</h2>
+  </div>
+
+
+  <% if Album.count > 0 %>
+  <%# <% if @albums.size > 0 %>
+    <div class="album-container">
+      <div class="albums">
+        <% seasons = ['94/95 Season', '97/98 Season', '20/21 Season'] %>
+        <% points = ['100/320', '120/320', '204/320'] %>
+        <% 3.times do |idx| %>
+          <%= link_to "/viewing-album", id: "album-link" do %>
+            <div class="card">
+                <div class="album-image"></div>
+
+              <div class="album-basic-info">
+                <div>
+                  <h2><%= seasons[idx] %></h2>
+                  <p><%= points[idx] %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <div class="album-container">
+      <div class="text-center text-white no-albums-header">
+        <h3>No Albums yet - Get Started!</h3>
+      </div>
+    </div>
+  <% end %>
+
+</div>
