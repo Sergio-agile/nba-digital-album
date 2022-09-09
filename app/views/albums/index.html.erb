@@ -1,40 +1,39 @@
 <div id="albums-background">
-  <%# <%=  image_tag image_url("basketball_gym_bw.jpeg"), id: "albums-background"%>
+  <%# <%=  image_tag image_url("basketball_gym_bw.jpeg") %>
 
-  <div class="text-end text-white">
-    <h3><%= Album.first.season %></h3>
+  <div class="text-center text-white albums-header">
+    <h2>My Albums</h2>
   </div>
-  <div class="text-center text-white">
-    <h2><%= Card.first.team%></h2>
-  </div>
-  <div class="album-cards-container">
-    <div class="album-cards">
-      <% Card.first(6).each do |player| %>
-        <div class="card">
-          <% if player.counter == 0 %>
-            <%# <img src="https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546" /> %>
-            <div class="card-image-hidden">
-            </div>
-          <% else %>
-            <div class="card-image-shown">
+
+
+  <% if Album.count > 0 %>
+  <%# <% if @albums.size > 0 %>
+    <div class="album-container">
+      <div class="albums">
+        <% seasons = ['94/95 Season', '97/98 Season', '20/21 Season'] %>
+        <% points = ['100/320', '120/320', '204/320'] %>
+        <% 3.times do |idx| %>
+          <%= link_to "/viewing-album", id: "album-link" do %>
+            <div class="card">
+                <div class="album-image"></div>
+
+              <div class="album-basic-info">
+                <div>
+                  <h2><%= seasons[idx] %></h2>
+                  <p><%= points[idx] %></p>
+                </div>
+              </div>
             </div>
           <% end %>
-          <div class="card-basic-info">
-            <div>
-              <h2><%= player.name %></h2>
-              <p><%= player.position %></p>
-            </div>
-            <% if player.counter > 1 %>
-            <%# <% if player.counter == 0 %>
-              <h3 class="card-count"><%= player.counter %></h3>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="album-container">
+      <div class="text-center text-white no-albums-header">
+        <h3>No Albums yet - Get Started!</h3>
+      </div>
+    </div>
+  <% end %>
 
-  <div class="viewing-album-button">
-    <%= link_to "Add Stickers", "#" %>
-  </div>
 </div>
