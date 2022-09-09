@@ -10,19 +10,18 @@
   <%# <% if @albums.size > 0 %>
     <div class="album-container">
       <div class="albums">
-        <% seasons = ['94/95 Season', '97/98 Season', '20/21 Season'] %>
+        <% seasons = ['94/95 Season', '99/00 Season', '21/22 Season'] %>
         <% points = ['100/320', '120/320', '204/320'] %>
+        <% images = ['9495_3.jpg', '9900.jpg', '2122.jpg'] %>
         <% 3.times do |idx| %>
-          <%= link_to "/viewing-album", id: "album-link" do %>
-            <div class="card">
-                <div class="album-image"></div>
+          <%= link_to "/viewing-album", class: "album-link" do %>
+            <div>
+              <%= image_tag images[idx], class: "album-image" %>
+            </div>
 
-              <div class="album-basic-info">
-                <div>
-                  <h2><%= seasons[idx] %></h2>
-                  <p><%= points[idx] %></p>
-                </div>
-              </div>
+            <div class="album-basic-info">
+              <h2><%= seasons[idx] %></h2>
+              <p><%= points[idx] %></p>
             </div>
           <% end %>
         <% end %>

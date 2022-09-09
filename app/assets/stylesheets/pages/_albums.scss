@@ -15,6 +15,7 @@
     justify-content: center;
     padding-bottom: 70px;
     text-decoration: none;
+    border-radius: 5px 5px 0 0;
 }
 
 .albums {
@@ -28,20 +29,29 @@
 }
 
 .album-image {
+    width: 296px;
     height: 350px;
     background-position: center;
     background-size: cover;
-    background-image: url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
+    // background-image: url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
     // border: 2px solid rgb(222, 222, 222);
     border-radius: 5px 5px 0 0;
     border: 2px solid rgb(29, 66, 138);
     border-bottom: unset;
 }
 
+// .album-image-size {
+//     height: 350px;
+//     background-position: center;
+//     background-size: cover;
+//     // border-radius: 5px 5px 0 0;
+//     // border: 2px solid rgb(29, 66, 138);
+//     // border-bottom: unset;
+// }
 .album-basic-info {
     text-align: center;
     text-justify: center;
-    // background-color: rgb(222, 222, 222);
+    background-color: rgb(222, 222, 222);
     // background-color: lightgray;
     border: 2px solid rgb(29, 66, 138);
     border-top: unset;
@@ -55,7 +65,7 @@
     }
 }
 
-#album-link {
+.album-link {
     text-decoration: none;
 }
 
@@ -63,11 +73,9 @@
 // #albums-background h2 {
 //     margin-top: 40px;
 // }
-
 // .albums-header {
 //     margin-top: 40px;
 // }
-
 .no-albums-header {
     padding-top: 70px;
 }
