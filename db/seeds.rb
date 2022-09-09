@@ -52,11 +52,11 @@ players_list.each do |player|
   end
 end
 
-# create an album
-
+# adding a user
 user = User.new(email: "kobe1@lakers.com", password: "password", first_name: "Kobe", last_name: "Bryant", nickname: "Black Mamba");
 user.save!
 
+# create an album
 album = Album.new(season: "Season 21/22", user: user)
 album.save!
 
@@ -81,23 +81,24 @@ rosters.each do |roster|
   end
 end
 
-
-# TODO: Add questions
-quiz1 = Quiz.new(question: "Where was Michael Jordan was born?",
-                  true_answer: "Brooklyn, New York",
-                  false_answer_one: "Atlanta, Georgia",
-                  false_answer_two: "Chicago, Illinois")
+# Add questions
+quiz1 = Quiz.new(question: "Where was Michael Jordan born?")
 quiz1.save!
-quiz2 = Quiz.new(question: "What team won the championship in 1993?",
-                  true_answer: "Chicago Bulls",
-                  false_answer_one: "Los Angeles Lakers",
-                  false_answer_two: "Detroit Pistons")
+QuizAnswer.create(quiz: quiz1, text: 'Brooklyn, NY', correct: true)
+QuizAnswer.create(quiz: quiz1, text: 'Chicago, IL', correct: false)
+QuizAnswer.create(quiz: quiz1, text: 'Atlanta, GH', correct: false)
+
+quiz2 = Quiz.new(question: "What team won the championship in 1993?")
 quiz2.save!
-quiz3 = Quiz.new(question: "Who is the top scorer of all time?",
-                  true_answer: "Kareem Abdul-Jabbar",
-                  false_answer_one: "Michael Jordan",
-                  false_answer_two: "Lebron James")
+QuizAnswer.create(quiz: quiz2, text: 'Los Angeles Lakers', correct: false)
+QuizAnswer.create(quiz: quiz2, text: 'Chicago Bulls', correct: true)
+QuizAnswer.create(quiz: quiz2, text: 'Detroit Pistons', correct: false)
+
+quiz3 = Quiz.new(question: "Who is the top scorer of all time?")
 quiz3.save!
+QuizAnswer.create(quiz: quiz3, text: 'Lebron James', correct: false)
+QuizAnswer.create(quiz: quiz3, text: 'Michael Jordan', correct: false)
+QuizAnswer.create(quiz: quiz3, text: 'Kareem Abdul-Jabbar', correct: true)
 
 # TODO: Add real season stats to each player
 

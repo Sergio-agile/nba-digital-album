@@ -1,5 +1,4 @@
 import { Controller } from "@hotwired/stimulus"
-import { SingleEntryPlugin } from "webpack";
 
 // Connects to data-controller="quiz"
 export default class extends Controller {
