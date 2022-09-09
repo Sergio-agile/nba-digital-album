@@ -1,0 +1,40 @@
+<div id="pack-background">
+
+  <div class="text-center pack-season">
+    <h2><%= Album.first.season %></h2>
+  </div>
+
+  <div class="pack-container">
+    <div class="pack-cards">
+      <%# Card.all.sample(5).each do |player| %>
+      <% Card.first(6).sample(5).each do |player| %>
+        <div class="card">
+        <%# need to change the if statement (below) to switch from "pack-hidden" to "pack-shown" click of a 'reveal' button - use JS event listner to toggle between classes %>
+          <%# if player.counter == 0 %>
+            <!-- <div class="pack-hidden">
+            </div> -->
+          <%# else %>
+            <div class="pack-shown">
+            </div>
+          <%# end %>
+          <div class="card-basic-info">
+            <div>
+              <h2><%= player.name %></h2>
+              <p class="pack-info"><%= player.position %></p>
+            </div>
+          </div>
+        </div>
+        <%# this should probably be moved to a method in the cards controller %>
+        <% player.update(counter: player.counter + 1) %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="pack-more-button">
+    <%= link_to "Another Pack", "quizzes/1" %>
+  </div>
+
+  <div class="viewing-album-button">
+    <%= link_to "Confirm", "viewing-album", class: "pack-more" %>
+  </div>
+</div>
