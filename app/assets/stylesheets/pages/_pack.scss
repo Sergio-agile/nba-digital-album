@@ -1,0 +1,79 @@
+#pack-background {
+  height: 100%;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://www.wallpaperup.com/uploads/wallpapers/2016/06/14/983466/0be2115ea2b28a92c5fb198b29fce6a1-1000.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 0 24px;
+}
+
+.pack-season{
+  color: white;
+  padding-top: 24px;
+  h2 {
+    font-size: 70px;
+  }
+}
+
+
+.pack-container{
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.pack-cards {
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px 100px;
+  padding: 24px 0;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.pack-hidden {
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://1000logos.net/wp-content/uploads/2017/04/Logo-NBA-1024x640.png");
+  border: 2px solid $gold;
+  border-radius: 5px 5px 0 0;
+}
+
+.pack-shown {
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
+  border: 2px solid $gold;
+  border-radius: 5px 5px 0 0;
+}
+
+
+// .card is in _viewing_album
+// .card-basic-info is in _viewing_album BUT the .pack-info (below) is changing the p color
+
+.pack-info {
+  color: $gold !important;
+}
+
+// .viewing-album-button is in _viewing_album
+
+.pack-more-button {
+  color: white;
+  padding: 8px 32px;
+  margin-bottom: -60px; // to get the button inline with the confirm button
+  font-weight: bold;
+  display: flex;
+  justify-content: start;
+  a {
+    background-color: $blue;
+    padding: 10px 3vw;
+    text-decoration: none;
+    color: white;
+    transition: background-color ease 0.5s;
+  }
+  a:hover{
+    color: white;
+    background-color: $gold;
+  }
+}
