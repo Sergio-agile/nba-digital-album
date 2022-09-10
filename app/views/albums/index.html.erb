@@ -1,38 +1,36 @@
-<div id="albums-background">
-  <%# <%=  image_tag image_url("basketball_gym_bw.jpeg") %>
+<div id="viewing-album-background">
 
-  <div class="text-center text-white albums-header">
+  <div class="text-center albums-header">
     <h2>My Albums</h2>
   </div>
 
+    <% if Album.count > 0 %>
+      <div class="album-cards-container">
+        <div class="albums-grid">
+          <% seasons = ['94/95 Season', '99/00 Season', '21/22 Season'] %>
+          <% points = ['100/320', '120/320', '204/320'] %>
+          <% images = ['2122.jpg', '2122.jpg', '2122.jpg'] %>
+          <% 3.times do |idx| %>
+            <div class="album-card">
+              <%= link_to "/viewing-album", class: "album-link" do %>
+                <%# <%= image_tag images[idx], class: "album-image" %>
+                <%= image_tag images[idx], class: "album-image" %>
 
-  <% if Album.count > 0 %>
-  <%# <% if @albums.size > 0 %>
-    <div class="album-container">
-      <div class="albums">
-        <% seasons = ['94/95 Season', '99/00 Season', '21/22 Season'] %>
-        <% points = ['100/320', '120/320', '204/320'] %>
-        <% images = ['9495_3.jpg', '9900.jpg', '2122.jpg'] %>
-        <% 3.times do |idx| %>
-          <%= link_to "/viewing-album", class: "album-link" do %>
-            <div>
-              <%= image_tag images[idx], class: "album-image" %>
-            </div>
-
-            <div class="album-basic-info">
-              <h2><%= seasons[idx] %></h2>
-              <p><%= points[idx] %></p>
+                <%# <div class="album-image">
+                </div> %>
+                <div class="album-basic-info">
+                  <h2><%= seasons[idx] %></h2>
+                  <p><%= points[idx] %></p>
+                </div>
+              <% end %>
             </div>
           <% end %>
-        <% end %>
+        </div>
       </div>
-    </div>
-  <% else %>
-    <div class="album-container">
+    <% else %>
       <div class="text-center text-white no-albums-header">
         <h3>No Albums yet - Get Started!</h3>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
 </div>

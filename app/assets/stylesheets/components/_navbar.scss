@@ -1,22 +1,41 @@
 // wrapper for the flexbox in the navbar
 #wrapper {
-    width: 100%;
     height: 150px;
     background-color: black;
     // background-color: rgb(51, 58, 58);
+    position: relative;
 }
 
 // flexbox for the navbar elements
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-around;
+    // gap: 10px;
+    // justify-content: space-between;
     align-items: center;
     height: 150px;
-    margin-right: 25px;
-    margin-left: 25px;
+    // margin-right: 25px;
+    // margin-left: 25px;
 }
 
-#nav-left-img {
+// The box-stuff is for centering the mid element of the navbar when the outer elements have not the same size
+.box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.box:first-child>span {
+    // margin-right: auto;
+    margin-right: 333px;
+}
+
+.box:last-child>span {
+    // margin-left: auto;
+    margin-left: 377px;
+}
+
+.nav-left-img {
     height: auto; // takes the same size of the div element (parent element)
     img {
         height: 150px; // resize of the img to fit in the div
@@ -25,10 +44,8 @@
 
 // this is to make the avatar an rounded image
 #image--cover {
-    // width: 120px;
-    // height: 120px;
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
 }
 
@@ -36,12 +53,11 @@
     text-align: center;
     background-color: white;
     border: none;
-    // color: black;
     color: rgb(29, 66, 138);
     text-decoration: none;
-    width: 110px;
-    height: 110px;
-    line-height: 110px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
     border-radius: 50%;
     display: block;
     box-shadow: 10px 0px 0px rgb(200, 16, 46), -10px 0px 0px rgb(29, 66, 138);

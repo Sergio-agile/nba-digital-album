@@ -18,14 +18,14 @@
 
       <div class='nav-container'>
 
-        <div id='nav-left-img'>
+        <div class='nav-left-img box'><span>
           <%= link_to "/" do %>
             <%= image_tag "basketball_player_silhouette_white.png" %>
           <% end %>
-        </div>
+        </span></div>
 
         <%# if the user is logged in the header is a link to the my albums page otherwise the header is not a link %>
-        <div>
+        <div class='box'><span>
           <% if user_signed_in? %>
             <%= link_to "/albums", class: "album-link" do %>
               <h1><span style="font-weight: bold; color: rgb(29, 66, 138)">NBA</span> <span style="color: rgb(200, 16, 46)">Digital Album</span></h1>
@@ -33,15 +33,15 @@
           <% else %>
             <h1><span style="font-weight: bold; color: rgb(29, 66, 138)">NBA</span> <span style="color: rgb(200, 16, 46)">Digital Album</span></h1>
           <% end %>
-        </div>
+        </span></div>
 
-        <div>
+        <div class='box'><span>
           <% if !user_signed_in? %>
             <%= link_to "Login", new_user_session_path, id: "login-button" %>
           <% else %>
             <%= image_tag "test_avatar.png", id: "image--cover" %>
           <% end %>
-        </div>
+        </span></div>
 
       </div>
 
