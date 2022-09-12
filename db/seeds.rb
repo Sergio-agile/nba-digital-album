@@ -7,12 +7,21 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "json"
 require "open-uri"
+require 'pp'
 
-teams_url = 'https://data.nba.net/data/10s/prod/v2/2021/teams.json'
+puts "----------------------------------------------------------------"
+puts "seeding the database"
+puts "----------------------------------------------------------------"
+# teams_url = 'https://data.nba.net/data/10s/prod/v2/2021/teams.json'
 
-teams_serialized = URI.open(teams_url).read
+# teams_serialized = URI.open(teams_url).read
+teams_serialized = File.open('teams.json').read
 teams_json = JSON.parse(teams_serialized)
 teams_list = teams_json["league"]["standard"]
+
+puts "----------------------------------------------------------------"
+puts "getting list of all teams"
+puts "----------------------------------------------------------------"
 
 TEAMS = {}
 teams_list.each do |team|
@@ -21,21 +30,45 @@ teams_list.each do |team|
   end
 end
 
+puts "----------------------------------------------------------------"
+puts "NBA TEAMS LIST"
+puts "----------------------------------------------------------------"
+
+pp TEAMS
+
+puts "----------------------------------------------------------------"
+puts "Generating hash with all data"
+puts "----------------------------------------------------------------"
+
 rosters = {}
-TEAMS.each_value do |value|
-  rosters[value] = {}
-  rosters[value]["players"] = []
+rosters["teams"] = []
+
+TEAMS.each do |team|
+  rooster_team = {}
+  rooster_team["id"] = team[0]
+  rooster_team["name"] = team[1]
+  rooster_team["players"] = []
+  rosters["teams"] << rooster_team
 end
 
-players_url = 'https://data.nba.net/10s/prod/v1/2022/players.json'
+# rosters["teams"].each do |team|
+#   pp team["id"]
+#   pp team["name"]
+#   pp team["players"]
+# end
 
-players_serialized = URI.open(players_url).read
+
+# players_url = 'https://data.nba.net/10s/prod/v1/2021/players.json'
+
+# players_serialized = URI.open(players_url).read
+
+players_serialized = File.open('players.json').read
 players_json = JSON.parse(players_serialized)
 players_list = players_json["league"]["standard"]
 
 players_list.each do |player|
   if TEAMS.key?(player["teamId"])
-    # p player
+    team = rosters["teams"].select { |team| team["id"] == player["teamId"] }
     player_to_add = Hash.new
     player_to_add["id"] = player["personId"]
     player_to_add["firstName"] = player["firstName"]
@@ -44,61 +77,85 @@ players_list.each do |player|
     player_to_add["height"] = player["heightMeters"]
     player_to_add["weight"] = player["weightKilograms"]
     player_to_add["position"] = player["teamSitesOnly"]["posFull"]
-    player_to_add["points"] = 20.5
-    player_to_add["rebounds"] = 8.3
-    player_to_add["assists"] = 3.8
     player_to_add["team"] = TEAMS[player["teamId"]]
-    rosters[player_to_add["team"]]["players"] << player_to_add
+
+    # Add data from profile URL
+    profile_url = "https://data.nba.net/data/10s/prod/v1/2021/players/#{player['personId']}_profile.json"
+    profile_serialized = URI.open(profile_url).read
+    profile_json = JSON.parse(profile_serialized)
+    player_profile = profile_json["league"]["standard"]["stats"]["regularSeason"]["season"][0]["teams"][0]
+    player_to_add["points"] = player_profile["ppg"]
+    player_to_add["rebounds"] = player_profile["rpg"]
+    player_to_add["assists"] = player_profile["apg"]
+    player_to_add["minutes"] = player_profile["mpg"]
+    team[0]["players"] << player_to_add
+    team[0]["players"] = team[0]["players"].sort_by { |player| player["minutes"] }.reverse!
   end
 end
 
-# adding a user
-user = User.new(email: "kobe1@lakers.com", password: "password", first_name: "Kobe", last_name: "Bryant", nickname: "Black Mamba");
-user.save!
 
-# create an album
-album = Album.new(season: "Season 21/22", user: user)
-album.save!
-
-rosters.each do |roster|
-  roster[1]["players"].each_with_index do |player, index|
-    # p index
-    if index < 6
-      name = "#{player['firstName']} #{player['lastName']}"
-      birthdate = player["birthdate"]
-      height = player["height"]
-      weight = player["weight"]
-      position = player["position"]
-      points = player["points"]
-      rebounds = player["rebounds"]
-      assists = player["assists"]
-      team = player["team"]
-      index = index + 1
-      card = Card.new(name: name, birthdate: birthdate, height: height, weight: weight,
-                    position: position, points: points, rebounds: rebounds, assists: assists, team: team, index: index, album: album)
-      card.save!
-    end
+# get first 6 team["players"].first(6).each
+rosters["teams"].each do |team|
+  team["players"].each do |player|
+    pp team["players"].size
+    pp team["name"]
+    pp team["id"]
+    pp player["firstName"]
+    pp player["id"]
   end
+  break
 end
 
-# Add questions
-quiz1 = Quiz.new(question: "Where was Michael Jordan born?")
-quiz1.save!
-QuizAnswer.create(quiz: quiz1, text: 'Brooklyn, NY', correct: true)
-QuizAnswer.create(quiz: quiz1, text: 'Chicago, IL', correct: false)
-QuizAnswer.create(quiz: quiz1, text: 'Atlanta, GH', correct: false)
+# players_list.each do |player|
+#   if TEAMS.key?(player["teamId"])
+#     # p player
+#     player_to_add = Hash.new
+#     player_to_add["id"] = player["personId"]
+#     player_to_add["firstName"] = player["firstName"]
+#     player_to_add["lastName"] = player["lastName"]
+#     player_to_add["birthdate"] = player["dateOfBirthUTC"]
+#     player_to_add["height"] = player["heightMeters"]
+#     player_to_add["weight"] = player["weightKilograms"]
+#     player_to_add["position"] = player["teamSitesOnly"]["posFull"]
+#     player_to_add["points"] = 20.5
+#     player_to_add["rebounds"] = 8.3
+#     player_to_add["assists"] = 3.8
+#     player_to_add["team"] = TEAMS[player["teamId"]]
+#     rosters[player_to_add["team"]]["players"] << player_to_add
+#   end
+# end
 
-quiz2 = Quiz.new(question: "What team won the championship in 1993?")
-quiz2.save!
-QuizAnswer.create(quiz: quiz2, text: 'Los Angeles Lakers', correct: false)
-QuizAnswer.create(quiz: quiz2, text: 'Chicago Bulls', correct: true)
-QuizAnswer.create(quiz: quiz2, text: 'Detroit Pistons', correct: false)
+# TODO: Seed albums from 2017. With Images?
+# # adding a user
+# user = User.new(email: "kobe1@lakers.com", password: "password", first_name: "Kobe", last_name: "Bryant", nickname: "Black Mamba");
+# user.save!
 
-quiz3 = Quiz.new(question: "Who is the top scorer of all time?")
-quiz3.save!
-QuizAnswer.create(quiz: quiz3, text: 'Lebron James', correct: false)
-QuizAnswer.create(quiz: quiz3, text: 'Michael Jordan', correct: false)
-QuizAnswer.create(quiz: quiz3, text: 'Kareem Abdul-Jabbar', correct: true)
+# # create an album
+# album = Album.new(season: "Season 21/22", user: user)
+# album.save!
+
+# rosters.each do |roster|
+#   roster[1]["players"].each_with_index do |player, index|
+#     # p index
+#     if index < 6
+#       name = "#{player['firstName']} #{player['lastName']}"
+#       birthdate = player["birthdate"]
+#       height = player["height"]
+#       weight = player["weight"]
+#       position = player["position"]
+#       points = player["points"]
+#       rebounds = player["rebounds"]
+#       assists = player["assists"]
+#       team = player["team"]
+#       index = index + 1
+#       # card = Card.new(name: name, birthdate: birthdate, height: height, weight: weight,
+#       #               position: position, points: points, rebounds: rebounds, assists: assists, team: team, index: index, album: album)
+#       # card.save!
+#     end
+#   end
+# end
+
+
 
 # TODO: Add real season stats to each player
 
@@ -121,3 +178,5 @@ QuizAnswer.create(quiz: quiz3, text: 'Kareem Abdul-Jabbar', correct: true)
 #   end
 #   break
 # end
+#https://data.nba.net/data/10s/prod/v1/2022/players/#{player["id"]}_profile.json
+#https://data.nba.net/data/10s/prod/v1/2021/players/1629027_profile.json
