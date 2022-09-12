@@ -6,32 +6,74 @@
   </div>
 
 
-  <% if Album.count > 0 %>
-  <%# <% if @albums.size > 0 %>
+  <% seasons = ['94/95 Season', '99/00 Season', '21/22 Season', '21/22 Season'] %>
+  <% points = ['100/320', '120/320', '204/320', '204/320'] %>
+  <% images = ['9495_3.jpg', '9900.jpg', '2122.jpg', '2122.jpg'] %>
+  <%# <% number_of_albums = Album.count.where(user_id: current_user.id) %>
+  <% number_of_albums = 0 %>
+  <% if number_of_albums > 0 %>
     <div class="album-container">
-      <div class="albums">
-        <% seasons = ['94/95 Season', '99/00 Season', '21/22 Season'] %>
-        <% points = ['100/320', '120/320', '204/320'] %>
-        <% images = ['9495_3.jpg', '9900.jpg', '2122.jpg'] %>
-        <% 3.times do |idx| %>
+      <% if number_of_albums == 1 %>
+        <% iterations = 1 %>
+        <div class="albums-grid-one">
+      <% elsif number_of_albums == 2 %>
+        <% iterations = 2 %>
+        <div class="albums-grid-two">
+      <% elsif number_of_albums >= 3 %>
+        <% iterations = 3 %>
+        <div class="albums-grid-three">
+      <% end %>
+        <% iterations.times do |idx| %>
           <%= link_to "/viewing-album", class: "album-link" do %>
-            <div>
-              <%= image_tag images[idx], class: "album-image" %>
-            </div>
+            <%= image_tag images[idx], class: "album-image" %>
 
-            <div class="album-basic-info">
-              <h2><%= seasons[idx] %></h2>
-              <p><%= points[idx] %></p>
-            </div>
+            <%# <div class="album-basic-info" > %>
+              <%# <h2><%= seasons[idx] %>
+              <%# </h2> %>
+              <%# <p><%= points[idx] %>
+              <%# </p> %>
+            <%# </div> %>
           <% end %>
         <% end %>
       </div>
     </div>
+    <% if number_of_albums > 3 %>
+      <div class="album-container">
+        <% if number_of_albums == 4 %>
+          <% iterations = 1 %>
+          <div class="albums-grid-one">
+        <% elsif number_of_albums == 5 %>
+          <% iterations = 2 %>
+          <div class="albums-grid-two">
+        <% end %>
+          <% iterations.times do |idx| %>
+            <%= link_to "/viewing-album", class: "album-link" do %>
+              <%= image_tag images[idx], class: "album-image" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   <% else %>
-    <div class="album-container">
+    <div class="no-album-container">
       <div class="text-center text-white no-albums-header">
         <h3>No Albums yet - Get Started!</h3>
       </div>
+
+      <%# Dropdown menu %>
+      <div class="dropdown-button dropdown">
+        <button >Select a Season</button>
+        <div class="dropdown-content">
+          <a href="#">21/22</a>
+          <a href="#">20/21</a>
+          <a href="#">19/20</a>
+          <a href="#">18/19</a>
+          <a href="#">17/18</a>
+        </div>
+      </div>
+
+
+
     </div>
   <% end %>
 
