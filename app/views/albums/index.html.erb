@@ -1,14 +1,15 @@
 <div id="albums-background">
   <%# <%=  image_tag image_url("basketball_gym_bw.jpeg") %>
+  <%# <%=  image_tag image_url("basketball_gym_bw.jpeg") %>
 
   <div class="text-center text-white albums-header">
     <h2>My Albums</h2>
   </div>
 
 
-  <% seasons = ['94/95 Season', '99/00 Season', '21/22 Season', '21/22 Season'] %>
-  <% points = ['100/320', '120/320', '204/320', '204/320'] %>
-  <% images = ['9495_3.jpg', '9900.jpg', '2122.jpg', '2122.jpg'] %>
+  <%# <% seasons = ['94/95 Season', '99/00 Season', '21/22 Season', '21/22 Season'] %>
+  <%# <% points = ['100/320', '120/320', '204/320', '204/320'] %>
+  <% images = ['panini_1718.png', 'panini_1819.png', 'panini_1920.jpeg', 'panini_2021.png', 'panini_2122.jpg'] %>
   <%# <% number_of_albums = Album.count.where(user_id: current_user.id) %>
   <% number_of_albums = 0 %>
   <% if number_of_albums > 0 %>
@@ -48,7 +49,7 @@
         <% end %>
           <% iterations.times do |idx| %>
             <%= link_to "/viewing-album", class: "album-link" do %>
-              <%= image_tag images[idx], class: "album-image" %>
+              <%= image_tag images[idx + 3], class: "album-image" %>
             <% end %>
           <% end %>
         </div>
@@ -61,15 +62,19 @@
       </div>
 
       <%# Dropdown menu %>
-      <div class="dropdown-button dropdown">
-        <button >Select a Season</button>
-        <div class="dropdown-content">
-          <a href="#">21/22</a>
-          <a href="#">20/21</a>
-          <a href="#">19/20</a>
-          <a href="#">18/19</a>
-          <a href="#">17/18</a>
-        </div>
+
+
+      <div class="dropdown">
+        <button class="no-albums-button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Select a Season
+        </button>
+        <ul class="dropdown-menu no-albums-dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="albums/new">21/22</a></li>
+          <li><a class="dropdown-item" href="#">20/21</a></li>
+          <li><a class="dropdown-item" href="#">19/20</a></li>
+          <li><a class="dropdown-item" href="#">18/19</a></li>
+          <li><a class="dropdown-item" href="#">17/18</a></li>
+        </ul>
       </div>
 
 
