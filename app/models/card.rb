@@ -1,3 +1,4 @@
 class Card < ApplicationRecord
-  belongs_to :album
+  has_many :album_cards, dependent: :destroy
+  has_many :albums, through: :album_cards
 end
