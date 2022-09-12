@@ -1,16 +1,12 @@
-<%#  NO LONGER NEEDED - USE ALBUMS/SHOW %>
-
 <div id="viewing-album-background">
-  <% x = 1 %>
-  <% y = x + 5 %>
 
   <div class="text-end viewing-album-season">
-    <h3><%= Album.first.season %></h3>
+    <h3><%= @album.season %></h3>
   </div>
   <div class="text-center viewing-album-team">
     <!-- <h2><%= Card.first.team%></h2> -->
     <!-- <h2><%= Album.first.cards.first.team%></h2> -->
-    <h2><%= Album.first.cards.find(x).team%></h2>
+    <h2><%= @year.team%></h2>
 
   </div>
 
@@ -24,7 +20,7 @@
       <%# instigate the increment when a button is pushed - JS? %>
       <%# take the x upto the Album.first.cards.find(x).team %>
       <%# add restrcitions - if x == 1, dont allow increment lower - same with y == 180 %>
-      <%  Album.first.cards.where(id: x..y).each do |player| %>
+      <%  @cards.each do |player| %>
       <%#  Album.first.cards.first(6).each do |player| %>
         <div class="card">
           <% if player.album_cards.first.counter == 0 %>
@@ -55,8 +51,12 @@
 
   <%# want: onClick(up)=> x += 6 & onClick(down)=> x -= 6 | retriction on value of x, disbale down if x == 1 and disble up if y == 180%>
   <div class="text-center">
-    <button type="button" class="btn btn-primary" id="up">Up</button>
-    <button type="button" class="btn btn-success" id="down">Down</button>
+  <%= link_to "/albums/1?x=#{@next}" do %>
+    <button type="button" class="btn btn-primary" id="up">next</button>
+  <% end %>
+  <%= link_to "/albums/1?x=#{@previous}" do %>
+    <button type="button" class="btn btn-success" id="down">previous</button>
+  <% end %>
   </div>
 
 </div>

@@ -5,7 +5,7 @@ body {
 
 .page-container {
     display: grid;
-    min-height: 100vh;
+    // min-height: 100vh;
     grid-template-rows: auto 1fr auto;
 }
 
@@ -62,7 +62,7 @@ body {
     }
     a:hover {
         opacity: 1;
-        color: rgb(89, 191, 224);
+        color: $blue;
         font-size: 14px;
     }
 
@@ -80,7 +80,7 @@ body {
     }
     a:hover {
         opacity: 1;
-        color: rgb(89, 191, 224);
+        color: $red;
         font-size: 28px;
     }
 }
@@ -91,7 +91,7 @@ body {
         font-size: 10px;
         a:hover {
             opacity: 1;
-            color: rgb(89, 191, 224);
+            color: $blue;
             font-size: 11px;
         }
     }
@@ -116,4 +116,4 @@ body {
 
 }
 
- 
+
