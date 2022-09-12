@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   get "viewing-album", to: "pages#viewing_album"
   get "pack", to: "pages#pack"
-
+  get "contact_us", to: "pages#contact_us"
+  get "about_us", to: "pages#about_us"
 end

@@ -21,6 +21,10 @@
 
 
 
+
+=======
+        <%# makes the silhouette of a basketball player a link to the landing page %>
+
         <div id='nav-left-img'>
           <%= link_to "/" do %>
             <%= image_tag "basketball_player_silhouette_white.png" %>
@@ -43,6 +47,7 @@
  <div>
 
 
+        <%# if the user is not logged show a login button on the right side otherwise show the users avatar %>
         <div>
           <% if !user_signed_in? %>
             <%= link_to "Login", new_user_session_path, id: "login-button" %>
@@ -78,6 +83,19 @@
     <%#= render "shared/footer" %>
   <%# </div> %>
     <%# Footer ---------------------------------------------------------------------------------------------------------------------- %>
+
+
+
+    <div class="page-container">
+      <div class="content-container">
+        <%= yield %>
+      </div>
+      <div class="footer-container">
+        <%= render "shared/footer" %>
+      </div>
+    </div>
+
+
 
 
   </body>

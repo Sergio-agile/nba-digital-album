@@ -4,12 +4,13 @@ body {
 
 
 .page-container {
-  display: grid;
-  min-height: 100vh;
-  grid-template-rows: auto 1fr auto;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
 }
 
 .footer {
+
   background: black;
   display: flex;
   align-items: center;
@@ -40,6 +41,31 @@ body {
       color: rgb(89, 191, 224);
       font-size: 14px;
   }
+
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0px 50px;
+    color: white;
+    font-size: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    // margin-top: 16px;
+    ul {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        opacity: 0.3;
+    }
+    a:hover {
+        opacity: 1;
+        color: rgb(89, 191, 224);
+        font-size: 14px;
+    }
+
 }
 
 .footer-links {
@@ -83,8 +109,15 @@ body {
 
 // keeping the footer at bottom of page (when grid present?)
 .wrapper {
+
   display: grid;
   grid-template-rows: 1fr auto;
   min-height: 100vh;
 
 }
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+

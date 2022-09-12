@@ -52,9 +52,14 @@ body {
 #image--cover {
     // width: 120px;
     // height: 120px;
+
     margin-top: 7px;
     width: 50px;
     height: 50px;
+
+    width: 100px;
+    height: 100px;
+
     border-radius: 50%;
     margin-right: 20px;
 }
@@ -66,9 +71,9 @@ body {
     // color: black;
     color: rgb(29, 66, 138);
     text-decoration: none;
-    width: 110px;
-    height: 110px;
-    line-height: 110px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
     border-radius: 50%;
     display: block;
     box-shadow: 10px 0px 0px rgb(200, 16, 46), -10px 0px 0px rgb(29, 66, 138);
