@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_08_103627) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_12_134528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "album_cards", force: :cascade do |t|
+    t.integer "counter", default: 0
+    t.bigint "album_id", null: false
+    t.bigint "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_album_cards_on_album_id"
+    t.index ["card_id"], name: "index_album_cards_on_card_id"
+  end
 
   create_table "albums", force: :cascade do |t|
     t.string "season"
@@ -34,11 +44,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_103627) do
     t.float "rebounds"
     t.float "assists"
     t.integer "index"
-    t.integer "counter", default: 0
-    t.bigint "album_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["album_id"], name: "index_cards_on_album_id"
+    t.string "season"
+    t.string "image"
   end
 
   create_table "quiz_answers", force: :cascade do |t|
@@ -74,7 +83,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_103627) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "album_cards", "albums"
+  add_foreign_key "album_cards", "cards"
   add_foreign_key "albums", "users"
-  add_foreign_key "cards", "albums"
   add_foreign_key "quiz_answers", "quizzes"
 end

@@ -23,10 +23,10 @@ export default class extends Controller {
       quizResultMessage.innerText = "Congratulations! You're anwer is correct! You got a new pack of 5 cards! We're adding this cards to your album next week :)";
       const quizOpenPack = document.getElementById("quiz-open-pack").style.display = "block";
     }else{
-      button.style.backgroundColor = "red";
+      button.style.backgroundColor = "#C8102E";
       const quizResultMessage = document.getElementById("quiz-result-message");
       quizResultMessage.innerText = "Sooooo cloze!!! Best luck next time";
-      document.getElementById("quiz-try-again").style.display = "block";
+      document.getElementById("quiz-try-another").style.display = "block";
     }
 
   }

@@ -7,6 +7,11 @@
   resolved "https://registry.npmjs.org/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
+"@fontsource/luckiest-guy@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/luckiest-guy/-/luckiest-guy-4.5.8.tgz#b22389754e8927045e72fa4a3d0550aca17156ef"
+  integrity sha512-B6fNjZ9SE8ckzchgGxHKDQE9PtaOcsqTcVFEUp9FjX+yQuYcf+D3wQ+UVhKYBmsYrEPQYivc2GRQyWQvNCfRDQ==
+
 "@hotwired/stimulus@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.1.0.tgz#20215251e5afe6e0a3787285181ba1bfc9097df0"
