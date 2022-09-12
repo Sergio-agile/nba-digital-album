@@ -11,8 +11,14 @@ Rails.application.routes.draw do
   #get 'albums/quizzes'
   resources :quizzes, only: [:show]
 
-  get "viewing-album", to: "pages#viewing_album"
-  get "pack", to: "pages#pack"
+  # get "viewing-album", to: "pages#viewing_album"
+  # get "pack", to: "pages#pack"
+  resources :albums, only: [:show] do
+    resources :packs, only: [:show]
+  end
+
   get "contact_us", to: "pages#contact_us"
   get "about_us", to: "pages#about_us"
 end
+
+# NEED TO SORT OUT ROOTS FROM QUIZ TO PACKS - SO OPENS RIGHT PACK FOR THE ALBUM IT CAME FROM
