@@ -11,7 +11,8 @@
     <div class="album-cards">
       <% Card.first(6).each do |player| %>
         <div class="card">
-          <% if player.counter == 0 %>
+          <%# if player.counter == 0 %>
+          <% if true==true %>
             <%# <img src="https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546" /> %>
             <div class="card-image-hidden">
             </div>
@@ -24,9 +25,10 @@
               <h2><%= player.name %></h2>
               <p><%= player.position %></p>
             </div>
-            <% if player.counter > 1 %>
-            <%# <% if player.counter == 0 %>
-              <h3 class="card-count"><%= player.counter %></h3>
+            <%# if player.counter > 1 %>
+            <% if true == true %>
+              <h3 class="card-count"><%# player.counter %></h3>
+              <h3 class="card-count"></h3>
             <% end %>
           </div>
         </div>
@@ -35,7 +37,7 @@
   </div>
 
   <div class="viewing-album-button">
-    <%= link_to "Add Stickers", "/quizzes/1" %>
+    <%= link_to "Add Stickers", "/quizzes/#{rand(1..3)}" %>
   </div>
 
 </div>
