@@ -83,11 +83,18 @@ players_list.each do |player|
     profile_url = "https://data.nba.net/data/10s/prod/v1/2021/players/#{player['personId']}_profile.json"
     profile_serialized = URI.open(profile_url).read
     profile_json = JSON.parse(profile_serialized)
-    player_profile = profile_json["league"]["standard"]["stats"]["regularSeason"]["season"][0]["teams"][0]
-    player_to_add["points"] = player_profile["ppg"]
-    player_to_add["rebounds"] = player_profile["rpg"]
-    player_to_add["assists"] = player_profile["apg"]
-    player_to_add["minutes"] = player_profile["mpg"]
+    debugger
+    if profile_json["league"]["standard"]["stats"]["regularSeason"]["season"][0]["teams"][0].nil?
+      player_to_add["points"] = 8.3
+      player_to_add["rebounds"] = 4.9
+      player_to_add["assists"] = 2.3
+      player_to_add["minutes"] = 5.5
+    else
+      player_to_add["points"] = player_profile["ppg"]
+      player_to_add["rebounds"] = player_profile["rpg"]
+      player_to_add["assists"] = player_profile["apg"]
+      player_to_add["minutes"] = player_profile["mpg"]
+    end
     team[0]["players"] << player_to_add
     team[0]["players"] = team[0]["players"].sort_by { |player| player["minutes"] }.reverse!
   end
@@ -96,14 +103,13 @@ end
 
 # get first 6 team["players"].first(6).each
 rosters["teams"].each do |team|
-  team["players"].each do |player|
+  team["players"].first(6).each do |player|
     pp team["players"].size
     pp team["name"]
     pp team["id"]
     pp player["firstName"]
     pp player["id"]
   end
-  break
 end
 
 # players_list.each do |player|
