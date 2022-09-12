@@ -25,7 +25,7 @@
     }
     a:hover {
         opacity: 1;
-        color: rgb(89, 191, 224);
+        color: $blue;
         font-size: 14px;
     }
 }
@@ -42,7 +42,7 @@
     }
     a:hover {
         opacity: 1;
-        color: rgb(89, 191, 224);
+        color: $red;
         font-size: 28px;
     }
 }
@@ -53,7 +53,7 @@
         font-size: 10px;
         a:hover {
             opacity: 1;
-            color: rgb(89, 191, 224);
+            color: $blue;
             font-size: 11px;
         }
     }
