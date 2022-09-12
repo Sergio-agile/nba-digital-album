@@ -1,3 +1,8 @@
+body {
+  margin: 0px !important;
+ }
+
+
 .page-container {
   display: grid;
   min-height: 100vh;
@@ -9,12 +14,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 90px;
   padding: 0px 50px;
   color: white;
   font-size: 12px;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
-  // margin-top: 16px;
+
+
+
+
+
 
 
   ul {
@@ -77,4 +86,5 @@
   display: grid;
   grid-template-rows: 1fr auto;
   min-height: 100vh;
+
 }
