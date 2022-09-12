@@ -81,7 +81,7 @@ rosters.each do |roster|
   end
 end
 
-# Add questions
+# Add quizzes
 quiz1 = Quiz.new(question: "Where was Michael Jordan born?")
 quiz1.save!
 QuizAnswer.create(quiz: quiz1, text: 'Brooklyn, NY', correct: true)

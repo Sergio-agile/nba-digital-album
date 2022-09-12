@@ -57,7 +57,7 @@
   }
 }
 
-#quiz-try-again {
+#quiz-try-another {
   text-decoration: none;
   display: block;
   width: 50%;
@@ -65,7 +65,7 @@
   text-align: center;
   padding: 10px;
   border-radius: 5px;
-  background-color: lightgrey;
+  background-color: $blue;
   margin-top: 70px;
   margin-left: 170px;
   display: none;
