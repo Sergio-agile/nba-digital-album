@@ -17,11 +17,11 @@
             <a class="quiz-button-lg" href="#"><%= answer.text %></a>
           </div>
         <% end %>
-        <div>
+        <div class="quiz-link-to">
           <%= link_to 'Try Another', quiz_path(3), id: "quiz-try-another" %>
         </div>
-        <div>
-          <%= link_to 'Open Pack', pack_path, id: "quiz-open-pack" %>
+        <div class="quiz-link-to">
+          <%= link_to 'Open Pack', 'albums/1/packs/1', id: "quiz-open-pack" %>
         </div>
 
 

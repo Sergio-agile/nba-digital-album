@@ -18,14 +18,20 @@ export default class extends Controller {
     const button = this.buttonTarget
     console.log(button);
     if (this.correctValue == "correct") {
-      button.style.backgroundColor = "green";
+      button.style.backgroundColor = "#007A33";
       const quizResultMessage = document.getElementById("quiz-result-message");
       quizResultMessage.innerText = "Congratulations! You're anwer is correct! You got a new pack of 5 cards! We're adding this cards to your album next week :)";
+      quizResultMessage.style.backgroundColor = "#AA76D8";
+      quizResultMessage.style.opacity = 0.8;
+      quizResultMessage.style.display = "block";
       const quizOpenPack = document.getElementById("quiz-open-pack").style.display = "block";
     }else{
       button.style.backgroundColor = "#C8102E";
       const quizResultMessage = document.getElementById("quiz-result-message");
       quizResultMessage.innerText = "Sooooo cloze!!! Best luck next time";
+      quizResultMessage.style.backgroundColor = "#AA76D8";
+      quizResultMessage.style.opacity = 0.8;
+      quizResultMessage.style.display = "block";
       document.getElementById("quiz-try-another").style.display = "block";
     }
 

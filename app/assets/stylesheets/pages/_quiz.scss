@@ -1,8 +1,12 @@
 #quiz-wrapper {
-  background-color: black;
+  // background-color: black;
   height: 100vh;
   color: white;
-  // background-image: url("paper.gif");
+  background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.5)),
+              url("space-jam-quiz.jpeg") no-repeat center center fixed;
+  // background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+  //   url("space-jam-quiz.jpeg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 .quiz-container {
@@ -16,23 +20,15 @@
   // color: black;
 }
 
-#quiz-open-pack {
-  text-decoration: none;
-  display: block;
-  width: 50%;
-  color: black;
-  text-align: center;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: $blue;
-  margin-top: 70px;
-  margin-left: 170px;
-  display: none;
-}
-
 #quiz-result-message {
+  padding: 30px;
   font-size: 26px;
-  color: lightgray;
+  color: black;
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  display: none;
 }
 
 .quiz-buttons-container {
@@ -44,6 +40,7 @@
   margin-top: 30px;
   align-items: center;
   background-color: $gold;
+  border: 0.5px solid black;
 
   .quiz-button-lg{
 
@@ -54,19 +51,30 @@
     text-align: center;
     padding: 10px;
     border-radius: 5px;
+    font-weight:500;
+    box-shadow: 2px 2px;
   }
 }
 
-#quiz-try-another {
+.quiz-link-to {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.quiz-link-to a {
+  padding: 8px 32px;
   text-decoration: none;
   display: block;
   width: 50%;
-  color: black;
+  color: white;
   text-align: center;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: $blue;
-  margin-top: 70px;
-  margin-left: 170px;
   display: none;
+  transition: background-color ease 0.5s;
+  background-color: $red;
+  &:hover {
+    background-color: white;
+    color: $red;
+  }
 }
