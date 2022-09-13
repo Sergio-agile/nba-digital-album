@@ -9,6 +9,17 @@ require "json"
 require "open-uri"
 require 'pp'
 
+# Destroying all instances of the database
+puts "----------------------------------------------------------------"
+puts " Destroying all instances"
+puts "----------------------------------------------------------------"
+AlbumCard.destroy_all
+Card.destroy_all
+Album.destroy_all
+User.destroy_all
+QuizAnswer.destroy_all
+Quiz.destroy_all
+
 puts "----------------------------------------------------------------"
 puts "seeding the database"
 puts "----------------------------------------------------------------"
