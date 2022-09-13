@@ -6,12 +6,21 @@
     <h2>My Albums</h2>
   </div>
 
-
-  <%# <% seasons = ['94/95 Season', '99/00 Season', '21/22 Season', '21/22 Season'] %>
-  <%# <% points = ['100/320', '120/320', '204/320', '204/320'] %>
-  <% images = ['panini_1718.png', 'panini_1819.png', 'panini_1920.jpeg', 'panini_2021.png', 'panini_2122.jpg'] %>
+  <% covers = ['panini_1718.png', 'panini_1819.png', 'panini_1920.jpeg', 'panini_2021.png', 'panini_2122.jpg'] %>
   <%# <% number_of_albums = Album.count.where(user_id: current_user.id) %>
-  <% number_of_albums = 0 %>
+  <% number_of_albums = current_user.albums.count %>
+  <% seasons = [] %>
+  <% current_user.albums.each { |album| seasons << album.season } %>
+  <% seasons_sorted = seasons.sort %>
+  <% season_years = [] %>
+  <% seasons.count.times { |idx| season_years << seasons_sorted[idx].gsub(/[a-zA-Z\/. ]/, '')[0..1] } %>
+  <% cover_years = [] %>
+  <% covers.count.times { |idx| cover_years << covers[idx].gsub(/[a-zA-Z\/._]/, '')[0..1] } %>
+  <% images = [] %>
+  <% covers.count.times { |idx| season_years.include?(cover_years[idx]) ? images << covers[idx] : images << "" } %>
+  <% images.reject! { |n| n == "" } %>
+
+  <%# <% number_of_albums = 0 %>
   <% if number_of_albums > 0 %>
     <div class="album-container">
       <% if number_of_albums == 1 %>
@@ -27,13 +36,6 @@
         <% iterations.times do |idx| %>
           <%= link_to "/viewing-album", class: "album-link" do %>
             <%= image_tag images[idx], class: "album-image" %>
-
-            <%# <div class="album-basic-info" > %>
-              <%# <h2><%= seasons[idx] %>
-              <%# </h2> %>
-              <%# <p><%= points[idx] %>
-              <%# </p> %>
-            <%# </div> %>
           <% end %>
         <% end %>
       </div>
@@ -62,8 +64,6 @@
       </div>
 
       <%# Dropdown menu %>
-
-
       <div class="dropdown">
         <button class="no-albums-button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           Select a Season
@@ -76,8 +76,6 @@
           <li><a class="dropdown-item" href="#">17/18</a></li>
         </ul>
       </div>
-
-
 
     </div>
   <% end %>
