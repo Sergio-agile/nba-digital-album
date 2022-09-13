@@ -2,6 +2,12 @@ class PacksController < ApplicationController
   def show
     @album = Album.find(params[:id])
     @random_cards = @album.cards.sample(5)
-    # @album_cards = AlbumCard.find(params[:id]) NEED TO SORT THIS OUT FOR PACKS - AND USE IN THE ALBUMS/SHOW AND CONTROLLER TOO
+
+    flip = rand(1..2)
+    if flip.even?
+      @color = "#1D428A" #this hash is the NBA $blue
+    else
+      @color = "#C8102E" #this hash is the NBA $blue
+    end
   end
 end
