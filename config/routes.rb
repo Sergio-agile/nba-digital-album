@@ -5,13 +5,13 @@ Rails.application.routes.draw do
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get "albums", to: "albums#index"
+  # get "albums", to: "albums#index"
 
   #get 'albums/cards'
   #get 'albums/quizzes'
   resources :quizzes, only: [:show]
 
-  resources :albums, only: [:show] do
+  resources :albums, only: [:show, :index] do
     resources :packs, only: [:show]
   end
 

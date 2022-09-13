@@ -137,21 +137,18 @@
 
 /* Dropdown Button */
 
-// https://www.w3schools.com/howto/howto_css_dropdown.asp
-.dropbtn {
-    // background-color: $blue;
-    background-color: $red;
-    // background-color: #04AA6D;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    // transition: background-color ease 0.5s;
-}
-
-
-/* The container <div> - needed to position the dropdown content */
-
+// // https://www.w3schools.com/howto/howto_css_dropdown.asp
+// .dropbtn {
+//     // background-color: $blue;
+//     background-color: $red;
+//     // background-color: #04AA6D;
+//     color: white;
+//     padding: 16px;
+//     font-size: 16px;
+//     border: none;
+//     // transition: background-color ease 0.5s;
+// }
+// /* The container <div> - needed to position the dropdown content */
 .dropdown {
     // position: relative;
     // display: inline-block;
@@ -159,86 +156,71 @@
     justify-content: center;
 }
 
-
-/* Dropdown Content (Hidden by Default) */
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    // background-color: $red;
-    // background-color: $blue;
-    // background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-
-/* Links inside the dropdown */
-
-.dropdown-content a {
-    // color: $blue;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-
-/* Change color of dropdown links on hover */
-
-.dropdown-content a:hover {
-    background-color: $gold;
-    color: $red;
-    // background-color: #ddd;
-}
-
-
-/* Show the dropdown menu on hover */
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
+// /* Dropdown Content (Hidden by Default) */
+// .dropdown-content {
+//     display: none;
+//     position: absolute;
+//     background-color: white;
+//     // background-color: $red;
+//     // background-color: $blue;
+//     // background-color: #f1f1f1;
+//     min-width: 160px;
+//     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+//     z-index: 1;
+// }
+// /* Links inside the dropdown */
+// .dropdown-content a {
+//     // color: $blue;
+//     color: black;
+//     padding: 12px 16px;
+//     text-decoration: none;
+//     display: block;
+// }
+// /* Change color of dropdown links on hover */
+// .dropdown-content a:hover {
+//     background-color: $gold;
+//     color: $red;
+//     // background-color: #ddd;
+// }
+// /* Show the dropdown menu on hover */
+// .dropdown:hover .dropdown-content {
+//     display: block;
+// }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 
-.dropdown:hover .dropbtn {
-    background-color: $blue;
-    // background-color: $red;
-    // background-color: $gold;
-    // background-color: #3e8e41;
-}
-
-.viewing-album-button {
-    color: white;
-    padding: 8px 32px;
-    margin-bottom: 32px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    a {
-        background-color: $red;
-        padding: 10px 18vw;
-        text-decoration: none;
-        color: white;
-        transition: background-color ease 0.5s;
-    }
-    a:hover {
-        color: white;
-        background-color: $gold;
-    }
-}
-
-.dropdown-button {
-    color: rgb(146, 48, 48);
-    padding: 8px 32px;
-    margin-bottom: 32px;
-    font-weight: bold;
-    display: flex;
-}
-
+// .dropdown:hover .dropbtn {
+//     background-color: $blue;
+//     // background-color: $red;
+//     // background-color: $gold;
+//     // background-color: #3e8e41;
+// }
+// .viewing-album-button {
+//     color: white;
+//     padding: 8px 32px;
+//     margin-bottom: 32px;
+//     font-weight: bold;
+//     display: flex;
+//     justify-content: center;
+//     a {
+//         background-color: $red;
+//         padding: 10px 18vw;
+//         text-decoration: none;
+//         color: white;
+//         transition: background-color ease 0.5s;
+//     }
+//     a:hover {
+//         color: white;
+//         background-color: $gold;
+//     }
+// }
+// .dropdown-button {
+//     color: rgb(146, 48, 48);
+//     padding: 8px 32px;
+//     margin-bottom: 32px;
+//     font-weight: bold;
+//     display: flex;
+// }
 .no-albums-button {
     // background-color: #C8102E;
     background-color: $red;
@@ -249,24 +231,15 @@
     margin-top: 100px;
 }
 
-.no-albums-button:hover {
-    color: white;
-    background-color: $gold;
-}
-
+// .no-albums-button:hover {
+//     color: white;
+//     background-color: $gold;
+// }
 .no-albums-button-hover {
     color: white;
     background-color: $gold;
 }
 
-// .dropdown-menu>.no-albums-button:focus {
-//     color: white !important;
-//     background-color: $gold !important;
-// }
-// .no-albums-button>.dropdown-menu:focus {
-//     color: white !important;
-//     background-color: $gold !important;
-// }
 .no-albums-dropdown-menu {
     border-radius: unset !important;
     --bs-dropdown-min-width: 15rem !important;

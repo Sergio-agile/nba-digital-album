@@ -34,7 +34,7 @@
         <div class="albums-grid-three">
       <% end %>
         <% iterations.times do |idx| %>
-          <%= link_to "/viewing-album", class: "album-link" do %>
+          <%= link_to albums_path(@albums.first(iterations)[idx].id).gsub(/[.]/, '/'), class: "album-link" do %>
             <%= image_tag images[idx], class: "album-image" %>
           <% end %>
         <% end %>
@@ -72,8 +72,8 @@
           <li><a class="dropdown-item" href="albums/new">21/22</a></li>
           <li><a class="dropdown-item" href="#">20/21</a></li>
           <li><a class="dropdown-item" href="#">19/20</a></li>
-          <li><a class="dropdown-item" href="#">18/19</a></li>
-          <li><a class="dropdown-item" href="#">17/18</a></li>
+          <%# <li><a class="dropdown-item" href="#">18/19</a></li> %>
+          <%# <li><a class="dropdown-item" href="#">17/18</a></li> %>
         </ul>
       </div>
 
