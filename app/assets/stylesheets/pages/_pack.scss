@@ -43,7 +43,7 @@
   height: 250px;
   background-position: center;
   background-size: cover;
-  background-image: url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
+  // background-image: url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
   border: 2px solid $gold;
   border-radius: 5px 5px 0 0;
 }
@@ -56,7 +56,7 @@
   color: $gold !important;
 }
 
-// .viewing-album-button is in _viewing_album
+// .viewing-album-to-quiz-button is in _viewing_album
 
 .pack-more-button {
   color: white;

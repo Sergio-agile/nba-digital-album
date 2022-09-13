@@ -7,27 +7,21 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
+    index = params[:index].to_i || 0
+    batches = @album.cards.each_slice(6).to_a
+    @cards = batches[index] || []
 
-    if params[:x].present?
-      @x = params[:x].to_i
+    # @team = @album.cards.first.team
+    @team = @cards.first.team
+
+    batches_count = batches.count
+
+    if batches_count == index + 1
+      @next_index = nil
     else
-      @x = 1
-
-    end
-    y = @x + 5
-
-    @cards = @album.cards.where(id: @x..y)
-    @year =  @album.cards.find(@x)
-
-    if @x == 1
-      @previous = @x
-    elsif y == 180
-      @next = @x
-    else
-      @next = @x + 6
-      @previous = @x - 6
+      @next_index = index + 1
     end
 
-    # @next isn't working now for some reason
+    @prev_index = (index - 1).negative? ? nil : index - 1
   end
 end
