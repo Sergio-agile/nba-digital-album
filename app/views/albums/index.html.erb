@@ -13,9 +13,9 @@
   <% current_user.albums.each { |album| seasons << album.season } %>
   <% seasons_sorted = seasons.sort %>
   <% season_years = [] %>
-  <% seasons.count.times { |idx| season_years << seasons_sorted[idx].gsub(/[a-zA-Z\/. ]/, '')[0..1] } %>
+  <% seasons.count.times { |idx| season_years << seasons_sorted[idx].gsub(/[a-zA-Z\/. ]/, '')[2..3] } %>
   <% cover_years = [] %>
-  <% covers.count.times { |idx| cover_years << covers[idx].gsub(/[a-zA-Z\/._]/, '')[0..1] } %>
+  <% covers.count.times { |idx| cover_years << covers[idx].gsub(/[a-zA-Z\/._]/, '')[2..3] } %>
   <% images = [] %>
   <% covers.count.times { |idx| season_years.include?(cover_years[idx]) ? images << covers[idx] : images << "" } %>
   <% images.reject! { |n| n == "" } %>
