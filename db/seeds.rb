@@ -136,6 +136,11 @@ seasons.each do |season|
       index = index + 1
     end
   end
+
+  # empty players for next season
+  rosters["teams"].each do |team|
+    team["players"] = []
+  end
 end
 
 
