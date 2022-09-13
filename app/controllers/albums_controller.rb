@@ -5,6 +5,12 @@ class AlbumsController < ApplicationController
   def quizzes
   end
 
+  def index
+    @albums = Album.where(user_id: current_user.id)
+    # @album = Album.where(user_id: current_user.id)
+    # @album = Album.find(params[:id])
+  end
+
   def show
     @album = Album.find(params[:id])
     index = params[:index].to_i || 0
