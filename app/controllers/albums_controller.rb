@@ -23,5 +23,13 @@ class AlbumsController < ApplicationController
     end
 
     @prev_index = (index - 1).negative? ? nil : index - 1
+
+
+    if index.odd?
+      @color = "#1D428A" #this hash is the NBA $blue
+    else
+      @color = "#C8102E" #this hash is the NBA $blue
+    end
+
   end
 end
