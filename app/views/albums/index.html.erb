@@ -6,7 +6,7 @@
     <h2>My Albums</h2>
   </div>
 
-  <% covers = ['panini_1718.png', 'panini_1819.png', 'panini_1920.jpeg', 'panini_2021.png', 'panini_2122.jpg'] %>
+  <% covers = ['panini_1718.png', 'panini_1819.png', 'panini_1920.png', 'panini_2021.png', 'panini_2122.png'] %>
   <%# <% number_of_albums = Album.count.where(user_id: current_user.id) %>
   <% number_of_albums = current_user.albums.count %>
   <% seasons = [] %>
@@ -39,7 +39,6 @@
       <% end %>
         <% iterations.times do |idx| %>
           <%= link_to albums_path(album_ids_sorted[idx][1]).gsub(/[.]/, '/'), class: "album-link" do %>
-          <%# <%= link_to albums_path(@albums.first(iterations)[idx].id).gsub(/[.]/, '/'), class: "album-link" do %>
             <%= image_tag images[idx], class: "album-image" %>
           <% end %>
         <% end %>
@@ -77,8 +76,6 @@
           <li><a class="dropdown-item" href="albums/new">21/22</a></li>
           <li><a class="dropdown-item" href="#">20/21</a></li>
           <li><a class="dropdown-item" href="#">19/20</a></li>
-          <%# <li><a class="dropdown-item" href="#">18/19</a></li> %>
-          <%# <li><a class="dropdown-item" href="#">17/18</a></li> %>
         </ul>
       </div>
 
