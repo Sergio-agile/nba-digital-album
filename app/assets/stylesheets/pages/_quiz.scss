@@ -1,6 +1,6 @@
 #quiz-wrapper {
     // background-color: black;
-    height: 80vh;
+    height: 100vh;
     // height: 100vh;
     color: white;
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5)), url("space-jam-quiz.png") no-repeat center center fixed;
@@ -71,7 +71,7 @@
 }
 
 .quiz-link-to {
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     font-weight: bold;
