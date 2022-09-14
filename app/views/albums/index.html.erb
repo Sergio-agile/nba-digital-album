@@ -20,6 +20,10 @@
   <% covers.count.times { |idx| season_years.include?(cover_years[idx]) ? images << covers[idx] : images << "" } %>
   <% images.reject! { |n| n == "" } %>
 
+  <% album_ids = {} %>
+  <% current_user.albums.each { |album| album_ids[album.season] = album.id } %>
+  <% album_ids_sorted = album_ids.sort %>
+
   <%# <% number_of_albums = 0 %>
   <% if number_of_albums > 0 %>
     <div class="album-container">
@@ -34,7 +38,8 @@
         <div class="albums-grid-three">
       <% end %>
         <% iterations.times do |idx| %>
-          <%= link_to albums_path(@albums.first(iterations)[idx].id).gsub(/[.]/, '/'), class: "album-link" do %>
+          <%= link_to albums_path(album_ids_sorted[idx][1]).gsub(/[.]/, '/'), class: "album-link" do %>
+          <%# <%= link_to albums_path(@albums.first(iterations)[idx].id).gsub(/[.]/, '/'), class: "album-link" do %>
             <%= image_tag images[idx], class: "album-image" %>
           <% end %>
         <% end %>
