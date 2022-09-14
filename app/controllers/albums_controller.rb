@@ -5,29 +5,37 @@ class AlbumsController < ApplicationController
   def quizzes
   end
 
+  def index
+    @albums = Album.where(user_id: current_user.id)
+    # @album = Album.where(user_id: current_user.id)
+    # @album = Album.find(params[:id])
+  end
+
   def show
     @album = Album.find(params[:id])
+    index = params[:index].to_i || 0
+    batches = @album.cards.each_slice(6).to_a
+    @cards = batches[index] || []
 
-    if params[:x].present?
-      @x = params[:x].to_i
+    # @team = @album.cards.first.team
+    @team = @cards.first.team
+
+    batches_count = batches.count
+
+    if batches_count == index + 1
+      @next_index = nil
     else
-      @x = 1
-
-    end
-    y = @x + 5
-
-    @cards = @album.cards.where(id: @x..y)
-    @year =  @album.cards.find(@x)
-
-    if @x == 1
-      @previous = @x
-    elsif y == 180
-      @next = @x
-    else
-      @next = @x + 6
-      @previous = @x - 6
+      @next_index = index + 1
     end
 
-    # @next isn't working now for some reason
+    @prev_index = (index - 1).negative? ? nil : index - 1
+
+
+    if index.odd?
+      @color = "#1D428A" #this hash is the NBA $blue
+    else
+      @color = "#C8102E" #this hash is the NBA $blue
+    end
+
   end
 end

@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+
     <title>NBA Digital Album</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Luckiest+Guy" />
+
   </head>
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Luckiest+Guy" />
 
   <body class="d-flex flex-column min-vh-100">
 
     <%# Navbar ---------------------------------------------------------------------------------------------------------------------- %>
     <div id='wrapper'>
-
       <div class='nav-container'>
 
-
-
-
-
         <%# makes the silhouette of a basketball player a link to the landing page %>
-
         <div id='nav-left-img'>
           <%= link_to "/" do %>
             <%= image_tag "basketball_player_silhouette_white.png" %>
           <% end %>
         </div>
 
-
-
-
         <%# if the user is logged in the header is a link to the my albums page otherwise the header is not a link %>
-         <div>
-           <% if user_signed_in? %>
-           <%= link_to "/albums", class: "album-link" do %>
-           <h1><span style="font-weight: bold; color: rgb(29, 66, 138)">NBA</span> <span style="color: rgb(200, 16, 46)">Digital Album</span></h1>
+        <div>
+          <% if user_signed_in? %>
+            <%= link_to "/albums", class: "album-link" do %>
+              <h1><span style="font-weight: bold; color: rgb(29, 66, 138)">NBA</span> <span style="color: rgb(200, 16, 46)">Digital Album</span></h1>
             <% end %>
-           <% else %>
+          <% else %>
            <h1><span style="font-weight: bold; color: rgb(29, 66, 138)">NBA</span> <span style="color: rgb(200, 16, 46)">Digital Album</span></h1>
-           <% end %>
+          <% end %>
         </div>
- <div>
-
 
         <%# if the user is not logged show a login button on the right side otherwise show the users avatar %>
         <div>
@@ -54,46 +46,26 @@
           <% else %>
             <%= image_tag "test_avatar.png", id: "image--cover" %>
           <% end %>
-         </div>
-
-
-</div>
-  </div>
+        </div>
+      </div>
     </div>
     <%# Navbar ---------------------------------------------------------------------------------------------------------------------- %>
 
-
-
-
     <%#= render "shared/navbar" %>
     <%# <%= render "shared/flashes" %>
-
-
-
-
-
-<%# Footer ---------------------------------------------------------------------------------------------------------------------- %>
-
-    <%# Footer ---------------------------------------------------------------------------------------------------------------------- %>
-
-
 
     <div class="page-container">
       <div class="content-container">
         <%= yield %>
       </div>
-
     </div>
 
+    <%# Footer ---------------------------------------------------------------------------------------------------------------------- %>
     <div class="footer-container">
       <%= render "shared/footer" %>
     </div>
-
-
-
+    <%# Footer ---------------------------------------------------------------------------------------------------------------------- %>
 
   </body>
-
-
 
 </html>

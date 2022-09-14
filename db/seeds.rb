@@ -9,6 +9,17 @@ require "json"
 require "open-uri"
 require 'pp'
 
+# Destroying all instances of the database
+puts "----------------------------------------------------------------"
+puts " Destroying all instances"
+puts "----------------------------------------------------------------"
+AlbumCard.destroy_all
+Card.destroy_all
+Album.destroy_all
+User.destroy_all
+QuizAnswer.destroy_all
+Quiz.destroy_all
+
 puts "----------------------------------------------------------------"
 puts "seeding the database"
 puts "----------------------------------------------------------------"
@@ -74,7 +85,7 @@ seasons.each do |season|
       puts "----------------------------------------------------------------"
       puts "Collecting data for players"
       puts "----------------------------------------------------------------"
-      team = rosters["teams"].select { |team| team["id"] == player["teamId"] }
+      team = rosters["teams"].select { |t| t["id"] == player["teamId"] }
       player_to_add = Hash.new
       player_to_add["id"] = player["personId"]
       player_to_add["firstName"] = player["firstName"]
@@ -136,22 +147,26 @@ seasons.each do |season|
       index = index + 1
     end
   end
+
+  # empty players for next season
+  rosters["teams"].each do |team|
+    team["players"] = []
+  end
 end
 
-
 # adding a user
-user = User.new(email: "kobe1@lakers.com", password: "password", first_name: "Kobe", last_name: "Bryant", nickname: "Black Mamba");
+user = User.new({
+                  email: "kobe1@lakers.com",
+                  password: "password",
+                  first_name: "Kobe",
+                  last_name: "Bryant",
+                  nickname: "Black Mamba"
+                })
 user.save!
 
 # # create 3 albums for the user
-album = Album.new(season: "Season 19/20", user: user)
-album.save!
-
-album = Album.new(season: "Season 20/21", user: user)
-album.save!
-
-album = Album.new(season: "Season 21/22", user: user)
-album.save!
+# seasons = Card.distinct.pluck(:season)
+# seasons.each { |season| Album.create!(season: season, user: user) }
 
 # Add quizzes
 quiz1 = Quiz.new(question: "Where was Michael Jordan born?")
