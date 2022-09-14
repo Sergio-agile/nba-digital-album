@@ -37,7 +37,7 @@
   </div>
 
   <div class="text-center viewing-album-to-quiz-button">
-    <%= link_to "Add Stickers", "/quizzes/#{rand(1..3)}", style: "background-color: #{@color} " %>
+    <%= link_to "Add Stickers", "/albums/#{@album.id}/quizzes/#{rand(@quiz_first..@quiz_last)}", style: "background-color: #{@color} " %>
   </div>
 
   <div>

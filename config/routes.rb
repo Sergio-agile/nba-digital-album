@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   # get "viewing-album", to: "pages#viewing_album"
   # get "pack", to: "pages#pack"
-  resources :albums, only: [:show] do
+  resources :albums, only: [:index, :show] do
     resources :quizzes, only: [:show]
     resources :packs, only: [:show]
   end
