@@ -16,6 +16,8 @@ class AlbumsController < ApplicationController
     index = params[:index].to_i || 0
     batches = @album.cards.each_slice(6).to_a
     @cards = batches[index] || []
+    @quiz_first = Quiz.first.id
+    @quiz_last = Quiz.last.id
 
     # @team = @album.cards.first.team
     @team = @cards.first.team

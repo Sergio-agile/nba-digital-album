@@ -29,7 +29,7 @@
   </div>
 
   <div class="pack-more-button">
-    <%= link_to "Add Stickers", "/quizzes/#{rand(1..3)}" %>
+    <%= link_to "Add Stickers", "/albums/#{@album.id}/quizzes/#{rand(@quiz_first..@quiz_last)}" %>
   </div>
 
   <div class="pack-to-viewing-album-button">

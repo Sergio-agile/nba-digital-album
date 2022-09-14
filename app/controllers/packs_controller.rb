@@ -2,6 +2,8 @@ class PacksController < ApplicationController
   def show
     @album = Album.find(params[:id])
     @random_cards = @album.cards.sample(5)
+    @quiz_first = Quiz.first.id
+    @quiz_last = Quiz.last.id
 
     flip = rand(1..2)
     if flip.even?

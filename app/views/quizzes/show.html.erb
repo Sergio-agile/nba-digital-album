@@ -18,10 +18,10 @@
           </div>
         <% end %>
         <div class="quiz-link-to">
-          <%= link_to 'Try Another', quiz_path(3), id: "quiz-try-another" %>
+          <%= link_to 'Try Another', "/albums/#{@album_id}/quizzes/#{rand(@quiz_first..@quiz_last)}" , id: "quiz-try-another" %>
         </div>
         <div class="quiz-link-to">
-          <%= link_to 'Open Pack', 'albums/1/packs/1', id: "quiz-open-pack" %>
+          <%= link_to 'Open Pack', "/albums/#{@album_id}/packs/#{@album_id}", id: "quiz-open-pack" %>
         </div>
 
 
