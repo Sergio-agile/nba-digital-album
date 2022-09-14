@@ -1,0 +1,5 @@
+meta_product_name: "NBA Digital Album"
+meta_title: "NBA Digital Album - A place to store your digital NBA collections"
+meta_description: "A place to store your digital NBA cards, open packs to watch your collection grow."
+meta_image: "meta.png" # should exist in `app/assets/images/`
+#twitter_account: "@product_twitter_account"   # required for Twitter Cards
