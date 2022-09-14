@@ -186,3 +186,25 @@ a:link {
      left: 0%;
   }
 }
+
+// Smallest device
+@media (min-width: 320px) and (max-width: 480px) {
+  .slide-container {
+      font-size: 10px;
+      a:hover {
+          opacity: 1;
+          color: $blue;
+          font-size: 11px;
+      }
+  }
+  .slider figure {
+      display: flex;
+      align-items: center;
+      a {
+          font-size: 18px;
+      }
+      a:hover {
+          font-size: 20px;
+      }
+  }
+}

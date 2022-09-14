@@ -50,7 +50,7 @@
   </div>
 
   <div class="viewing-album-button">
-    <%= link_to "Add Stickers", "/quizzes/#{rand(1..3)}" %>
+    <%= link_to "Add Stickers", "albums/#{@album.id}/quizzes/#{rand(1..3)}" %>
   </div>
 
   <%# want: onClick(up)=> x += 6 & onClick(down)=> x -= 6 | retriction on value of x, disbale down if x == 1 and disble up if y == 180%>

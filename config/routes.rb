@@ -9,11 +9,12 @@ Rails.application.routes.draw do
 
   #get 'albums/cards'
   #get 'albums/quizzes'
-  resources :quizzes, only: [:show]
+
 
   # get "viewing-album", to: "pages#viewing_album"
   # get "pack", to: "pages#pack"
   resources :albums, only: [:show] do
+    resources :quizzes, only: [:show]
     resources :packs, only: [:show]
   end
 
