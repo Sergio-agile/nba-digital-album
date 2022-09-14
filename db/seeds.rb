@@ -165,8 +165,8 @@ user = User.new({
 user.save!
 
 # # create 3 albums for the user
-# seasons = Card.distinct.pluck(:season)
-# seasons.each { |season| Album.create!(season: season, user: user) }
+seasons = Card.distinct.pluck(:season)
+seasons.each { |season| Album.create!(season: season, user: user) }
 
 # Add quizzes
 quiz1 = Quiz.new(question: "Where was Michael Jordan born?")
