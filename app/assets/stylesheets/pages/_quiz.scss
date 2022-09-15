@@ -15,7 +15,7 @@
 
 .quiz-container {
     margin: auto;
-    width: 70%;
+    width: 60%;
     // height: auto;
     padding: 10px;
     display: flex;
@@ -45,6 +45,7 @@
     text-align: center;
     background-color: white;
     display: none;
+    width: 60%;
 }
 
 .quiz-buttons-container {
@@ -57,7 +58,7 @@
     align-items: center;
     background-color: $gold;
     border: 0.5px solid black;
-    width: 50%;
+    width: 60%;
     .quiz-button-lg {
         text-decoration: none;
         display: block;
@@ -77,13 +78,14 @@
     justify-content: center;
     font-weight: bold;
     width: -webkit-fill-available;
+    // width: 100%;
 }
 
 .quiz-link-to a {
     padding: 8px 32px;
     text-decoration: none;
     display: block;
-    width: 50%;
+    width: 60%;
     color: white;
     text-align: center;
     display: none;
@@ -94,4 +96,12 @@
         background-color: white;
         color: $red;
     }
+}
+
+
+.text-width-quiz {
+    // box-sizing: 60%;
+    text-align: center;
+    width: 60%;
+    color: white;
 }
