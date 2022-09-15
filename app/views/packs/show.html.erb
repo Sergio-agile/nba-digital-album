@@ -1,7 +1,7 @@
 <div id="pack-background">
 
   <div class="text-center pack-season">
-    <h2><%= @album.season %></h2>
+    <h2><%= @prev_season %>/<%= @season_short %> Season</h2>
   </div>
 
   <div class="pack-container">
@@ -13,8 +13,17 @@
             <!-- <div class="pack-hidden">
             </div> -->
           <%# else %>
+          <%# Dont think i need the code on line 11 to 15 anymore %>
+
+          <!--
             <div class="pack-shown" style="background-image: url('<%= player.image %>');">
             </div>
+          -->
+            <div id="switcher">
+              <img src="https://1000logos.net/wp-content/uploads/2017/04/Logo-NBA-1024x640.png" alt="" class="top">
+              <img src="<%= player.image %>" alt="" class="bottom">
+            </div>
+
           <%# end %>
           <div class="card-basic-info">
             <div>
@@ -29,11 +38,11 @@
   </div>
 
   <div class="pack-more-button">
-    <%= link_to "Add Stickers", "/albums/#{@album.id}/quizzes/#{rand(@quiz_first..@quiz_last)}" %>
+    <%= link_to "Open Another Pack", "/albums/#{@album.id}/quizzes/#{rand(@quiz_first..@quiz_last)}" %>
   </div>
 
   <div class="pack-to-viewing-album-button">
-    <%= link_to "Confirm", album_path(@album), class: "pack-more" %>
+    <%= link_to "See Album", album_path(@album), class: "pack-more" %>
   </div>
 
 </div>
