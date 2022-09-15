@@ -1,25 +1,12 @@
-<%# <%= link_to "/home", class: "linking" do %>
-  <%# <div class="banner"> %>
-    <%# <div class="container"> %>
-      <%# <h1>NBA Digital Album</h1> %>
-      <%# <p></p> %>
-
-         <div class="slider">
-        <div class="slide-container">
-       <%= image_tag "landing1.png", :class => "slide1" %>
-       <div class="viewing-album-button"><%=link_to "Click to view your Albums!", albums_path%></div>
-        </div>
-
-
-      <div class="text">
-
-     <h1>Welcome to NBA Digital Albums ...</h1>
-     <h2>A place to store your digital NBA collections</h2>
-      </div>
-
-
-
-
-
-  <%# </div> %>
-<%# <% end %>
+<div style="position: relative;">
+  <div class="slider">
+    <div class="slide-container">
+      <%= image_tag "landing1.png", :class => "slide1" %>
+    </div>
+  </div>
+  <div class="landing-text">
+    <h1>Welcome to NBA Digital Albums ...</h1>
+    <h2>A place to store your digital NBA collections</h2>
+    <%=link_to "Click to view your Albums!", albums_path%>
+  </div>
+</div>
