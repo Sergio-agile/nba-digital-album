@@ -136,7 +136,7 @@
 #switcher img.top {
   animation-name: topSwitcherFadeInOut;
   transition-timing-function: linear;
-  animation-delay: 1s;
+  animation-delay: 2s;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   }
@@ -153,7 +153,7 @@
   #switcher img.bottom {
     animation-name: bottomSwitcherFadeInOut;
     transition-timing-function: linear;
-    animation-delay: 1s;
+    animation-delay: 2s;
     animation-duration: 3s;
     animation-fill-mode: forwards;
     }
