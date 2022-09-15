@@ -1,210 +1,184 @@
-
-
-
-
-
-
-
 // start slider navbar
-
-
 .slide-container {
-  width: 100%;
-  margin: 0;
+    width: 100%;
+    margin: 0;
 }
 
 .text h2 {
-  color: #FFFFFF;
-  position: relative;
-  bottom: 350px;
-  font-family: 'Inter';
-  font-style: normal;
-  left: 50px;
-  height: 60px;
-  width: 750px;
-
-
+    color: #FFFFFF;
+    position: relative;
+    bottom: 350px;
+    // font-family: 'Inter';
+    // font-style: normal;
+    left: 50px;
+    height: 60px;
+    width: 750px;
 }
 
 .text h1 {
-
-color: #FFFFFF;
-position: relative;
-bottom: 700px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 48px;
-left: 50px;
-height: 60px;
-width: 750px;
-
-
+    color: #FFFFFF;
+    position: relative;
+    bottom: 700px;
+    // font-family: 'Inter';
+    // font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    left: 50px;
+    height: 60px;
+    width: 750px;
 }
 
-
-
 .viewing-album-button {
- top: 550px;
-  font-weight: bold;
-  position: absolute;
-  left: 370px;
-  a {
-    background-color: $red;
-    padding: 10px 18vw;
-    text-decoration: none;
-    color: white;
-    transition: background-color ease 0.5s;
-  }
-  a:hover{
-    color: white;
-    background-color: $gold;
-  }
+    top: 550px;
+    font-weight: bold;
+    position: absolute;
+    left: 370px;
+    a {
+        background-color: $red;
+        padding: 10px 18vw;
+        text-decoration: none;
+        color: white;
+        transition: background-color ease 0.5s;
+    }
+    a:hover {
+        color: white;
+        background-color: $gold;
+    }
 }
 
 a:link {
-  text-decoration: underline;
-  text-decoration: none;
-
-
-
+    text-decoration: underline;
+    text-decoration: none;
 }
-
-
-
-
-
-
 
 .slide1 {
-  width: 99vw !important;
-  object-fit: cover;
-
-
+    width: 99vw !important;
+    object-fit: cover;
 }
-
 
 * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
-
-
 .slider {
-  overflow: hidden; /*prevents text overflowing boundaries*/
-  height: auto;
-  margin: auto; /*centres slide show*/
-  background-color: black;
-
-
-
-
-
+    overflow: hidden;
+    /*prevents text overflowing boundaries*/
+    height: auto;
+    margin: auto;
+    /*centres slide show*/
+    background-color: black;
 }
 
 .slider figure div {
-  width: 20%;
-  float: left; /*puts images in a line*/
-  position: relative;
+    width: 20%;
+    float: left;
+    /*puts images in a line*/
+    position: relative;
 }
 
 .slider figure img {
- /* i.e. 100% of it's parent div (above) which is 20% of the containing div 'slider'*/
-  float: left; /*need to do this for imgs & divs within figure*/
-  width: 1000px;
-  height: 945px;
-  left: 100px;
-  top: 138px;
-  background-color: transparent;
-  mix-blend-mode: normal;
-  opacity: 0.45;
-
+    /* i.e. 100% of it's parent div (above) which is 20% of the containing div 'slider'*/
+    float: left;
+    /*need to do this for imgs & divs within figure*/
+    width: 1000px;
+    height: 945px;
+    left: 100px;
+    top: 138px;
+    background-color: transparent;
+    mix-blend-mode: normal;
+    opacity: 0.45;
 }
 
 .slider figure {
-  position: relative;
-  width: 500%;
-  margin: 0;
-  left: 0; /*to start images at the very left of the page*/
-  animation: 40s slidy infinite; /*can call animation anything, I have used 'slidy'*/
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    /*to start images at the very left of the page*/
+    animation: 40s slidy infinite;
+    /*can call animation anything, I have used 'slidy'*/
 }
 
+
 /*now make the animation*/
+
 @keyframes slidy {
-  0% {
-     left: 0%;
-  }
-  10% {
-     left: 0%;
-  }
-  12% {
-     left: -100%; /*from 10% to 12%, i.e. 2% of the total animation time, is the speed of the transition from one slide to the next. left:-100% means move the image left by 100% of it's total length which is 500%*/
-  }
-  22% {
-     left: -100%; /*from 12% to 22%, i.e. 10% of the total animation time, is how long the slide stays on screen before moving to the next*/
-  }
-  24% {
-     left: -200%;
-  }
-  34% {
-     left: -200%;
-  }
-  36% {
-     left: -300%;
-  }
-  46% {
-     left: -300%;
-  }
-  48% {
-     left: -400%;
-  }
-  58% {
-     left: -400%;
-  }
-  60% {
-     left: -300%;
-  }
-  70% {
-     left: -300%;
-  }
-  72% {
-     left: -200%;
-  }
-  82% {
-     left: -200%;
-  }
-  84% {
-     left: -100%;
-  }
-  94% {
-     left: -100%;
-  }
-  96% {
-     left: 0%;
-  }
+    0% {
+        left: 0%;
+    }
+    10% {
+        left: 0%;
+    }
+    12% {
+        left: -100%;
+        /*from 10% to 12%, i.e. 2% of the total animation time, is the speed of the transition from one slide to the next. left:-100% means move the image left by 100% of it's total length which is 500%*/
+    }
+    22% {
+        left: -100%;
+        /*from 12% to 22%, i.e. 10% of the total animation time, is how long the slide stays on screen before moving to the next*/
+    }
+    24% {
+        left: -200%;
+    }
+    34% {
+        left: -200%;
+    }
+    36% {
+        left: -300%;
+    }
+    46% {
+        left: -300%;
+    }
+    48% {
+        left: -400%;
+    }
+    58% {
+        left: -400%;
+    }
+    60% {
+        left: -300%;
+    }
+    70% {
+        left: -300%;
+    }
+    72% {
+        left: -200%;
+    }
+    82% {
+        left: -200%;
+    }
+    84% {
+        left: -100%;
+    }
+    94% {
+        left: -100%;
+    }
+    96% {
+        left: 0%;
+    }
 }
 
 // Smallest device
 @media (min-width: 320px) and (max-width: 480px) {
-  .slide-container {
-      font-size: 10px;
-      a:hover {
-          opacity: 1;
-          color: $blue;
-          font-size: 11px;
-      }
-  }
-  .slider figure {
-      display: flex;
-      align-items: center;
-      a {
-          font-size: 18px;
-      }
-      a:hover {
-          font-size: 20px;
-      }
-  }
+    .slide-container {
+        font-size: 10px;
+        a:hover {
+            opacity: 1;
+            color: $blue;
+            font-size: 11px;
+        }
+    }
+    .slider figure {
+        display: flex;
+        align-items: center;
+        a {
+            font-size: 18px;
+        }
+        a:hover {
+            font-size: 20px;
+        }
+    }
 }
