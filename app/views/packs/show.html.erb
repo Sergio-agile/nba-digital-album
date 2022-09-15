@@ -7,30 +7,20 @@
   <div class="pack-container">
     <div class="pack-cards">
       <% @random_cards.each do |player| %>
-        <div class="card">
-        <%# need to change the if statement (below) to switch from "pack-hidden" to "pack-shown" click of a 'reveal' button - use JS event listner to toggle between classes %>
-          <%# if player.counter == 0 %>
-            <!-- <div class="pack-hidden">
-            </div> -->
-          <%# else %>
-          <%# Dont think i need the code on line 11 to 15 anymore %>
 
-          <!--
-            <div class="pack-shown" style="background-image: url('<%= player.image %>');">
-            </div>
-          -->
+        <div class="card">
             <div id="switcher">
-              <img src="https://1000logos.net/wp-content/uploads/2017/04/Logo-NBA-1024x640.png" alt="" class="top">
+              <img src="https://1000logos.net/wp-content/uploads/2017/04/Logo-NBA-1024x640.png" class="top">
               <img src="<%= player.image %>" alt="" class="bottom">
             </div>
 
-          <%# end %>
           <div class="card-basic-info">
             <div>
               <h2><%= player.name %></h2>
               <p class="pack-info"><%= player.position %></p>
             </div>
           </div>
+
         </div>
         <% player.album_cards.first.update(counter: player.album_cards.first.counter + 1) %>
       <% end %>

@@ -43,6 +43,6 @@ class AlbumsController < ApplicationController
     @season = @album.season
     @season_short = @season.chars.last(2).join
     @prev_season = @season_short.to_i - 1
-    
+
   end
 end

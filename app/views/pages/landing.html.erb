@@ -4,36 +4,21 @@
       <%# <h1>NBA Digital Album</h1> %>
       <%# <p></p> %>
 
+         <div class="slider">
+        <div class="slide-container">
+       <%= image_tag "landing1.png", :class => "slide1" %>
+        </div>
 
-    <div class="slider">
 
-        <figure>
-          <div class="slide-container">
-              <%= image_tag image_url("landing1.png"), :class => "slide1" %>
-           </div>
-           <div class="slide-container">
-              <%= image_tag image_url("landing2.png"), :class => "slide1" %>
-           </div>
-           <div class="slide-container">
-              <%= image_tag "landing3.png", :class => "slide1" %>
-           </div>
-            <div class="slide-container">
-              <%= image_tag "landing4.png", :class => "slide1" %>
-            </div>
-           <div class="slide-container">
-            <%= image_tag "landing5.png", :class => "slide1" %>
-           </div>
+      <div class="text">
 
-        </figure>
-
-        <div class="text">
      <h1>Welcome to NBA Digital Albums ...</h1>
      <h2>A place to store your digital NBA collections</h2>
       <div class="viewing-album-button"><%=link_to "Click to view your Albums!", albums_path%></div>
 
-    </div>
-</div>
 
-    </div>
+
+
+
   <%# </div> %>
 <%# <% end %>
