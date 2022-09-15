@@ -21,7 +21,7 @@ export default class extends Controller {
             button.style.backgroundColor = "#3e753b";
             // button.style.backgroundColor = "#007A33";
             const quizResultMessage = document.getElementById("quiz-result-message");
-            quizResultMessage.innerText = "Congratulations! You're anwer is correct! You got a new pack of 5 cards! We're adding this cards to your album next week :)";
+            quizResultMessage.innerText = "Congratulations! Your answer is correct! You won a new pack of 5 cards!";
             quizResultMessage.style.backgroundColor = "#F4A460";
             // quizResultMessage.style.backgroundColor = "#AA76D8";
             quizResultMessage.style.opacity = 0.7;
