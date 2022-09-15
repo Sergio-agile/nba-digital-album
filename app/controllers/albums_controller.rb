@@ -16,10 +16,8 @@ class AlbumsController < ApplicationController
     index = params[:index].to_i || 0
     batches = @album.cards.each_slice(6).to_a
     @cards = batches[index] || []
-    @quiz_first = Quiz.first.id
-    @quiz_last = Quiz.last.id
 
-    # @team = @album.cards.first.team
+
     @team = @cards.first.team
 
     batches_count = batches.count
@@ -39,5 +37,12 @@ class AlbumsController < ApplicationController
       @color = "#C8102E" #this hash is the NBA $blue
     end
 
+    @quiz_first = Quiz.first.id
+    @quiz_last = Quiz.last.id
+
+    @season = @album.season
+    @season_short = @season.chars.last(2).join
+    @prev_season = @season_short.to_i - 1
+    
   end
 end

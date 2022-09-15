@@ -47,7 +47,8 @@
     height: 250px;
     background-position: center;
     background-size: cover;
-    // background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
+    // remove the line below if want darked player image back (and un comment line 20 in albums#show)
+    background-image: url("https://1000logos.net/wp-content/uploads/2017/04/Logo-NBA-1024x640.png");
     // border: 2px solid $red;
     border-radius: 5px 5px 0 0;
 }
@@ -56,7 +57,6 @@
     height: 250px;
     background-position: center;
     background-size: cover;
-    // background-image: url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
     // border: 2px solid $red;
     border-radius: 5px 5px 0 0;
 }
