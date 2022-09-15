@@ -139,21 +139,21 @@
   animation-delay: 2s;
   animation-duration: 2s;
   animation-fill-mode: forwards;
-  }
+}
 
-  @keyframes bottomSwitcherFadeInOut {
-    0% {
-    opacity:0;
-    }
-    100% {
-    opacity:1;
-    }
+@keyframes bottomSwitcherFadeInOut {
+  0% {
+  opacity:0;
   }
+  100% {
+  opacity:1;
+  }
+}
 
-  #switcher img.bottom {
-    animation-name: bottomSwitcherFadeInOut;
-    transition-timing-function: linear;
-    animation-delay: 2s;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-    }
+#switcher img.bottom {
+  animation-name: bottomSwitcherFadeInOut;
+  transition-timing-function: linear;
+  animation-delay: 2s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  }
