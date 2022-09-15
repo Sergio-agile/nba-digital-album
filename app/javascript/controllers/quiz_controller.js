@@ -20,7 +20,7 @@ export default class extends Controller {
     if (this.correctValue == "correct") {
       button.style.backgroundColor = "#007A33";
       const quizResultMessage = document.getElementById("quiz-result-message");
-      quizResultMessage.innerText = "Congratulations! You're anwer is correct! You got a new pack of 5 cards! We're adding this cards to your album next week :)";
+      quizResultMessage.innerText = "Congratulations! Your answer is correct!";
       quizResultMessage.style.backgroundColor = "#AA76D8";
       quizResultMessage.style.opacity = 0.8;
       quizResultMessage.style.display = "block";
@@ -28,7 +28,7 @@ export default class extends Controller {
     }else{
       button.style.backgroundColor = "#C8102E";
       const quizResultMessage = document.getElementById("quiz-result-message");
-      quizResultMessage.innerText = "Sooooo cloze!!! Best luck next time";
+      quizResultMessage.innerText = "Sooooo cloze!!! Best luck next time!";
       quizResultMessage.style.backgroundColor = "#AA76D8";
       quizResultMessage.style.opacity = 0.8;
       quizResultMessage.style.display = "block";
