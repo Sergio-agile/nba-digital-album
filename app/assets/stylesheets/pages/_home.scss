@@ -1,11 +1,5 @@
-
-
-
-
-
-
-
 // start slider navbar
+
 .slide1 {
   width: 99vw !important;
   object-fit: cover;
@@ -30,12 +24,14 @@
 }
 
 
+
 .slide-container {
-  width: 100%;
-  margin: 0;
+    width: 100%;
+    margin: 0;
 }
 
 .text h2 {
+
   color: #FFFFFF;
   position: relative;
   bottom: 200px;
@@ -44,8 +40,6 @@
   left: 50px;
   height: 60px;
   width: 750px;
-
-
 }
 
 .text {
@@ -53,7 +47,6 @@
 }
 
 .text h1 {
-
 color: #FFFFFF;
 position: relative;
 bottom: 550px;
@@ -62,14 +55,10 @@ font-style: normal;
 font-weight: 700;
 font-size: 48px;
 left: 50px;
-
-
-
 }
 
-
-
 .viewing-album-button {
+
   top: 580px;
   font-weight: bold;
   position: absolute;
@@ -91,12 +80,11 @@ left: 50px;
     color: white;
     background-color: $gold;
   }
+
 }
 
 a:link {
-  text-decoration: underline;
-  text-decoration: none;
-
-
-
+    text-decoration: underline;
+    text-decoration: none;
 }
+

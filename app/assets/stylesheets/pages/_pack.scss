@@ -22,6 +22,7 @@
 }
 
 .pack-cards {
+  max-width: 1200px; //max width of laptop so it has 3 on 1 row and 2 on the next
   display: flex;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px 100px;
@@ -30,23 +31,22 @@
   flex-wrap: wrap;
 }
 
-.pack-hidden {
-  height: 250px;
-  background-position: center;
-  background-size: cover;
-  background-image: url("https://1000logos.net/wp-content/uploads/2017/04/Logo-NBA-1024x640.png");
-  border: 2px solid $gold;
-  border-radius: 5px 5px 0 0;
-}
+// .pack-hidden {
+//   height: 250px;
+//   background-position: center;
+//   background-size: cover;
+//   background-image: url("https://1000logos.net/wp-content/uploads/2017/04/Logo-NBA-1024x640.png");
+//   border: 2px solid $gold;
+//   border-radius: 5px 5px 0 0;
+// }
 
-.pack-shown {
-  height: 250px;
-  background-position: center;
-  background-size: cover;
-  // background-image: url("https://image.cnbcfm.com/api/v1/image/106498863-1587478459689michaeljordan.jpg?v=1587478546");
-  border: 2px solid $gold;
-  border-radius: 5px 5px 0 0;
-}
+// .pack-shown {
+//   height: 250px;
+//   background-position: center;
+//   background-size: cover;
+//   border: 2px solid $gold;
+//   border-radius: 5px 5px 0 0;
+// }
 
 
 // .card is in _viewing_album
@@ -97,3 +97,63 @@
     background-color: $gold;
   }
 }
+
+
+
+#switcher {
+  position:relative;
+  height: 250px;
+  border: 2px solid $gold;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  img{
+    position:absolute;
+    transition: opacity 1s ease-in-out;
+    max-height: 100%;
+    bottom: 0;
+  }
+  .top{
+    z-index: 10;
+    // height: 210px;
+    left: -21%;
+  }
+  .bottom{
+    z-index: 9;
+    opacity: 0;
+    left: -12%;
+  }
+}
+
+@keyframes topSwitcherFadeInOut {
+  0% {
+  opacity:1;
+  }
+  100% {
+  opacity:0;
+  }
+}
+
+#switcher img.top {
+  animation-name: topSwitcherFadeInOut;
+  transition-timing-function: linear;
+  animation-delay: 1.5s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  }
+
+  @keyframes bottomSwitcherFadeInOut {
+    0% {
+    opacity:0;
+    }
+    100% {
+    opacity:1;
+    }
+  }
+
+  #switcher img.bottom {
+    animation-name: bottomSwitcherFadeInOut;
+    transition-timing-function: linear;
+    animation-delay: 1.5s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    }

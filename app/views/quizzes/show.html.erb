@@ -1,13 +1,16 @@
 <div id="quiz-wrapper">
   <div class="quiz-container">
-    <div class="quiz-title-container">
-      <div>
+  <%# <div class="quiz-container quiz-title-container"> %>
+    <%# <div class="quiz-title-container"> %>
+      <%# <div> %>
         <p>Add cards to you album answering the question</p>
         <h1><%= @quiz.question %></h1>
-      </div>
-      <div>
+      <%# </div> %>
+
+      <%# <div> %>
         <div id="quiz-result-message">
         </div>
+
         <% @quiz.quiz_answers.each do |answer| %>
           <div class="quiz-buttons-container"
               data-controller="quiz"
@@ -17,15 +20,15 @@
             <a class="quiz-button-lg" href="#"><%= answer.text %></a>
           </div>
         <% end %>
+
         <div class="quiz-link-to">
           <%= link_to 'Try Another', "/albums/#{@album_id}/quizzes/#{rand(@quiz_first..@quiz_last)}" , id: "quiz-try-another" %>
         </div>
+
         <div class="quiz-link-to">
           <%= link_to 'Open Pack', "/albums/#{@album_id}/packs/#{@album_id}", id: "quiz-open-pack" %>
         </div>
-
-
-      </div>
-
+      <%# </div> %>
+    <%# </div> %>
   </div>
 </div>

@@ -1,76 +1,49 @@
-body {
-
- margin: 0px !important;
-}
-
-
-
-.h1 {
-    margin-top: 17px;
-}
-
 // wrapper for the flexbox in the navbar
 #wrapper {
     width: 100%;
-    height: 90px;
+    height: 100px;
     background-color: black;
     // background-color: rgb(51, 58, 58);
-
-
-
-
-
 }
 
 // flexbox for the navbar elements
 .nav-container {
     display: flex;
     justify-content: space-between;
-
-    margin-right: 15px;
+    align-items: center;
+    height: 100px;
+    margin-right: 25px;
     margin-left: 25px;
-    margin-top: 13px;
-
-    display: flex;
-
 }
 
 #nav-left-img {
     height: auto; // takes the same size of the div element (parent element)
     img {
-        height: 70px;
+        height: 75px;
         // resize of the img to fit in the div
     }
 }
 
 // this is to make the avatar an rounded image
 #image--cover {
-    // width: 120px;
-    // height: 120px;
-
     width: 65px;
     height: 65px;
-    margin-top: 7px;
-
     border-radius: 50%;
-
-
+    object-fit: cover;
 }
 
 #login-button {
     text-align: center;
     background-color: white;
     border: none;
-    // color: black;
     color: rgb(29, 66, 138);
     text-decoration: none;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
     border-radius: 50%;
     display: block;
-    box-shadow: 10px 0px 0px rgb(200, 16, 46), -10px 0px 0px rgb(29, 66, 138);
-    // box-shadow: -10px 0px 0px rgb(29, 66, 138);
+    box-shadow: 7px 0px 0px rgb(200, 16, 46), -7px 0px 0px rgb(29, 66, 138);
     font-size: large;
 }
 
@@ -78,24 +51,7 @@ body {
     color: rgb(200, 16, 46);
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .footer {
-      font-size: 10px;
-      a:hover {
-          opacity: 1;
-          color: $blue;
-          font-size: 11px;
-      }
-  }
-  .footer-links {
-      display: flex;
-      align-items: center;
-      a {
-          font-size: 18px;
-      }
-      a:hover {
-          font-size: 20px;
-      }
-  }
+.nba-digital-album-logo {
+    margin-left: -10px;
+    font-family: Helvetica !important;
 }
