@@ -16,7 +16,8 @@
 
 .viewing-album-season {
     color: white;
-    margin: 16px 16px 0 h3 {
+    padding: 16px 0;
+    h3 {
         font-size: 22px;
     }
 }
@@ -74,8 +75,6 @@
     text-align: center;
     text-justify: center;
     margin: 8px 0 -8px 0;
-    // background: url(https://images.unsplash.com/photo-1608157637292-78780d5560d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2xpdHRlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
-    // background: url(https://images.unsplash.com/photo-1631636507718-f8efdca99602?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Z2xpdHRlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
     h2 {
         font-size: 28px;
     }
@@ -152,7 +151,6 @@
   border-top-right-radius: 5px;
   display: none;
 
-
   div {
     padding: 12.7px;
   }
@@ -162,7 +160,8 @@
   }
 }
 
-.card:hover {
+.card-image-shown:hover {
+  border: none !important;
   .card-stats-details-container{
     display: block;
   }
